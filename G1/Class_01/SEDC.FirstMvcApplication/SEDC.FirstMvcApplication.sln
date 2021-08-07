@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.FirstDemoApp", "SEDC.FirstDemoApp\SEDC.FirstDemoApp.csproj", "{9421A437-0054-431F-9C5E-489184949FA1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9421A437-0054-431F-9C5E-489184949FA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9421A437-0054-431F-9C5E-489184949FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9421A437-0054-431F-9C5E-489184949FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9421A437-0054-431F-9C5E-489184949FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB890946-9E8E-4B11-BBDB-CEDF6FFEAF66}
+	EndGlobalSection
+EndGlobal
