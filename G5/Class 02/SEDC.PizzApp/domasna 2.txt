@@ -1,0 +1,8 @@
+Имплементирајте controller кој ќе се вика UserController и ќе содржи 4 акции (методи):
+- GetUser акција која што враќа ViewResult, а името на View-то е "User" и треба да се пристапи преку custom рута 
+"localhost:1111/User"
+- GetContact акција која што враќа RedirectResult и редиректира до controller со име "AdminController" и акција со име "Admin".
+Оваа акција нема custom рута. Не е потребно да се креираат AdminController и Admin view.
+- GetEmpty акција која што враќа EmptyResult и има custom рута "localhost:1111/Empty"
+- GetId акција која што има 1 параметар со име Id (integer) и се пристапува со custom рута "localhost:1111/Id/{id}".
+Параметарот мора секогаш да се прецизира (не треба да е nullable).
