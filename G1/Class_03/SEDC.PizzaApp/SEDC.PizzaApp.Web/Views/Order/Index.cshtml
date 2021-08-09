@@ -1,0 +1,47 @@
+﻿@model List<SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel>
+<!-- SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel if we want to show only one order -->
+<!--How not do implement view with Domain Model-->
+@*<div class="row">
+        <div class="col-md-3">
+            <h2>Order Details</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>User Details</h3>
+            <p>FirstName: @Model.User.FirstName</p>
+            <p>LastName: @Model.User.LastName</p>
+            <p>Address: @Model.User.Address</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h3> Pizza Details</h3>
+            <p>Name: @Model.Pizza.Name</p>
+            <p>Price: @Model.Pizza.Price</p>
+        </div>
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-5">
+            <h3>Order Details</h3>
+            <p>Pizza Name: @Model.PizzaName</p>
+            <p>User: @Model.UserFullName</p>
+            <p>Price: @Model.Price</p>
+            <p>Payment Method: @Model.PaymentMethod</p>
+        </div>
+    </div>*@
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach (var item in Model)
+        {
+            <h4>Order Details</h4>
+            <p>Pizza Name: @item.PizzaName</p>
+            <p>User: @item.UserFullName</p>
+            <p>Price: @item.Price</p>
+            <p>Payment method: @item.PaymentMethod</p>
+        }
+
+    </div>
+</div>

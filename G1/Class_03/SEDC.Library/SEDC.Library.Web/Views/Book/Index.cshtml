@@ -1,0 +1,20 @@
+﻿@*<h1 class="text-center">Welcome to our library!</h1>
+    <p class="text-center">Here you can find a lot of interesting books!</p>
+    <p class="text-center"> This is some dummy text</p>
+    <p class="text-center"> This is some new dummy text</p>*@
+@model List<Book>
+
+<div class="row">
+    <div class="col-md-5">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <p>Title: @Model[i].Title, Author:@Model[i].Author</p>
+
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <a asp-controller="Book" asp-action="CreateBook">Create Book</a>
+    </div>
+</div>
