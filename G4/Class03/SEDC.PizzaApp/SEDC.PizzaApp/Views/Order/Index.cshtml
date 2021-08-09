@@ -1,0 +1,70 @@
+﻿@model SEDC.PizzaApp.Models.ViewModels.OrderDetailsViewModel
+@*<h1>@ViewData["Title"]</h1>*@
+<h1>@ViewBag.Title</h1>
+
+@* List using Order Model *@
+@*<ul>
+    <li>
+        Name: @Model.User.FirstName
+    </li>
+    <li>
+        Pizza: @Model.Pizza
+    </li>
+    <li>
+        Price: @Model.Price
+    </li>
+    <li>
+        Address: @Model.User.Address
+    </li>
+</ul>*@
+@* List using ViewData *@
+@*<ul>
+        <li>
+            Name: @(((SEDC.PizzaApp.Models.Domain.Order)ViewData["Order"]).User.FirstName)
+        </li>
+        <li>
+            Pizza: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).Pizza)
+        </li>
+        <li>
+            Price: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).Price)
+        </li>
+        <li>
+            Address: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).User.Address)
+        </li>
+    </ul>*@
+
+@* List using ViewBag *@
+@*<ul>
+        <li>
+            Name: @ViewBag.Order.User.FirstName
+        </li>
+        <li>
+            Pizza: @ViewBag.Naracka.Pizza
+        </li>
+        <li>
+            Price: @ViewBag.Order.Price
+        </li>
+        <li>
+            Address: @ViewBag.Order.User.Address
+        </li>
+    </ul>*@
+
+
+@* List using OrderDetailsViewModel *@
+<ul>
+    <li>
+        Name: @Model.FullName
+    </li>
+    <li>
+        Pizza: @Model.Pizza
+    </li>
+    <li>
+        Price: @Model.Price
+    </li>
+    <li>
+        Address: @Model.Address
+    </li>
+    <li>
+        Contact: @Model.Contact
+    </li>
+</ul>
