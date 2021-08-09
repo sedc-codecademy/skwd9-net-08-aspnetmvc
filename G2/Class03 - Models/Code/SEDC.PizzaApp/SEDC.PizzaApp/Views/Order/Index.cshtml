@@ -1,0 +1,33 @@
+﻿@using SEDC.PizzaApp.Models.ViewModels
+@model List<OrderListViewModel> 
+
+<h2>List of orders:</h2>
+
+@{ 
+
+    foreach(OrderListViewModel orderModel in Model)
+{
+    <p>Pizza name: @orderModel.PizzaName - User: @orderModel.UserFullName</p>
+}
+
+}
+
+<h4>@ViewData["Message"]</h4>
+<h5>@ViewData["Date"]</h5>
+
+@*<h5>@ViewData["FirstUser"].FirstName</h5>*@
+@*<h5>@((SEDC.PizzaApp.Models.Domain.User)ViewData["FirstUser"]).FirstName</h5>*@
+
+
+
+
+
+
+
+@*@using SEDC.PizzaApp.Models.Domain
+    @model List<Order>
+
+    @for(int i=0; i<Model.Count; i++)
+    {
+    <p>Pizza: @Model[i].Pizza.Name - User: @Model[i].User.FirstName @Model[i].User.LastName</p>
+    }*@
