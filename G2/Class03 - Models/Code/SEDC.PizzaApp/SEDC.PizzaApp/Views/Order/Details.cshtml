@@ -1,0 +1,20 @@
+﻿@using SEDC.PizzaApp.Models.Domain
+@using SEDC.PizzaApp.Models.ViewModels
+@*@model Order*@
+@model OrderDetailsViewModel
+
+<h2>Order details:</h2>
+<h4>@ViewBag.Message</h4>
+
+@*Order model*@
+@*<p>Pizza name: @Model.Pizza.Name</p>
+<p>User: @Model.User.FirstName @Model.User.LastName</p>
+<p>Payment method: @Model.PaymentMethod</p>*@
+
+@*Order details view model*@
+<p>Pizza name: @Model.PizzaName</p>
+<p>User: @Model.UserFullName</p>
+<p>Payment method: @Model.PaymentMethod</p>
+<p>Order price: @Model.Price DEN </p>
+
+<h4>The first user in our app is: @ViewBag.User.FirstName</h4>
