@@ -40,6 +40,8 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
             ViewData["ProfileInfo"] = TempData["ProfileInfo"];
             ViewData["PageTitle"] = "Profile info";
 
+            //ViewData["UserDetails"] = GetUserDetails(id);
+
             // dummy data
             ViewBag.DummyData = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
 
@@ -144,12 +146,25 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
         [HttpGet("create-profile")]
         public IActionResult CreateUser()
         {
-            return View();
+            return View("CreateUserCustom");
         }
 
         [HttpPost("create-profile")]
         public IActionResult CreateUser(CreateUserVM request)
         {
+            //// this is validation without using ModelState
+            //if(string.IsNullOrWhiteSpace(request.FirstName) && request.FirstName.Length < 3)
+            //{
+            //    // error
+            //}
+
+            if (!ModelState.IsValid)
+            {
+                ModelState.AddModelError("ProfileError", "Invalid Input");
+                return View("CreateUserCustom", request);
+            }
+
+
             var user = new User
             {
                 Id = PizzaDatabase.Users.Count + 1,
