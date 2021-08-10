@@ -1,0 +1,46 @@
+﻿@model SEDC.AspNet.Mvc.Class03.App.Models.ViewModels.UserDetailsVM
+
+    <div>
+        <h1>@ViewData["PageTitle"]</h1>
+    </div>
+    <hr />
+
+@{ 
+    if (ViewData["ProfileInfo"] != null)
+    {
+        <div class="alert alert-info" role="alert">
+            @ViewData["ProfileInfo"]
+        </div>
+    }
+}
+<hr />
+
+<div class="row">
+    <div class="col-12">
+        <span>Full name:</span>  <span>@Model.FullName</span>
+    </div>
+    <div class="col-12">
+        <span>Address: </span> <span>@Model.Address</span>
+    </div>
+    <div class="col-12">
+        <span>Phone number: </span> <span>@Model.Phone</span>
+    </div>
+    <div class="col-12">
+        <span>Active subscription:</span> <span>@Model.IsSubscribed</span>
+    </div>
+</div>
+<hr />
+<partial name="~/Views/Shared/_fullProfileInfoPartial.cshtml" model="Model.UserDetails">
+
+    @{
+        foreach (var order in Model.UserDetails.Orders)
+        {
+            <partial name="~/Views/Shared/_orderPartial.cshtml" model="order" />
+        }
+    }
+
+    <hr />
+    <div class="row">
+        <div class="col-10"></div>
+        <div class="col-2"><h3>Total spendings:</h3> <h1>@Model.UserDetails.TotalSpendings $</h1> </div>
+    </div>

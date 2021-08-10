@@ -1,0 +1,25 @@
+﻿@model SEDC.AspNet.Mvc.Class03.App.Models.DataTransferModels.UserDto
+
+    <div class="row">
+        <div class="col-12">
+            <span>Fullname: </span> <span>@string.Format("{0} {1}", Model.FirstName, Model.LastName)</span>
+        </div>
+        <div class="col-12">
+            <span>Phone number: </span> <span>@string.Format("{0:(###) ###-####}", Model.Phone)</span>
+        </div>
+        <div class="col-12">
+            <span>Address: </span> <span>@Model.Address</span>
+        </div>
+        <div class="col-12">
+            <span>@*Active subscription(Thernary operator):*@ </span> <span> @*@{Model.IsSubscribed ? "Yes" : "No"}*@ </span>
+            <span>Active subscription(Normal): </span> 
+            @if (Model.IsSubscribed)
+            {
+                <span>Yes</span>
+            }
+            else
+            {
+                <span>No</span>
+            }
+        </div>
+    </div>
