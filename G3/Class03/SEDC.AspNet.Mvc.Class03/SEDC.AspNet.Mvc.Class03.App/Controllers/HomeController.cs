@@ -18,8 +18,13 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string error)
         {
+            if(error != null)
+            {
+                ViewBag.ProfileInfo = error;
+            }
+
             return View();
         }
 

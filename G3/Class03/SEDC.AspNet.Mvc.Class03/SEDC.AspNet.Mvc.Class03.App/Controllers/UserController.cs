@@ -21,7 +21,7 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
 
             if(user == null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Home", new { error = $"The user with {id} does not exists" });
             }
 
             var address = PizzaDatabase.Addresses.FirstOrDefault(a => a.UserId == user.Id);
@@ -35,6 +35,11 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
                 Address = address.Name,
                 IsSubscribed = subs.IsSubscribed ? "Yes" : "No"
             };
+
+            ViewData["ProfileInfo"] = TempData["ProfileInfo"];
+
+            // dummy data
+            ViewBag.DummyData = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8 };
 
             return View(userDetails);
         }
@@ -124,6 +129,9 @@ namespace SEDC.AspNet.Mvc.Class03.App.Controllers
             PizzaDatabase.Users.Add(user);
             PizzaDatabase.Addresses.Add(address);
             PizzaDatabase.NewsletterSubscription.Add(sub);
+
+            TempData["ProfileInfo"] = "Successfuly created profile";
+            //ViewData["ProfileInfo"] = "Successfuly created profile";
 
             return RedirectToAction("GetProfile", new { id = user.Id });
         }
