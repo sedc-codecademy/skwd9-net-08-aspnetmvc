@@ -7,7 +7,7 @@ and add a h4 tag that will say whether the pizza is on promotion or not dependin
 
 2. Add a SeeUsers action in the Home controller. This action should return a view that shows all the full names of the users in the system. 
 
-3. Add partial view for showing details of a pizza and use it in both the Pizza Index and Pizza Details view.
+3. Add partial view for showing details of a pizza and use it in both the Pizza Index and Pizza Details view. Index view should list the pizzas and Details should show details for one.
 
 
 ## Contact
