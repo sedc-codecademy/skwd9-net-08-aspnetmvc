@@ -1,0 +1,69 @@
+﻿@model List<OrderDetailsViewModel>
+<!-- SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel if we want to show only one order -->
+<!--How not do implement view with Domain Model-->
+@*<div class="row">
+        <div class="col-md-3">
+            <h2>Order Details</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h3>User Details</h3>
+            <p>FirstName: @Model.User.FirstName</p>
+            <p>LastName: @Model.User.LastName</p>
+            <p>Address: @Model.User.Address</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <h3> Pizza Details</h3>
+            <p>Name: @Model.Pizza.Name</p>
+            <p>Price: @Model.Pizza.Price</p>
+        </div>
+    </div>*@
+
+@*<div class="row">
+        <div class="col-md-5">
+            <h3>Order Details</h3>
+            <p>Pizza Name: @Model.PizzaName</p>
+            <p>User: @Model.UserFullName</p>
+            <p>Price: @Model.Price</p>
+            <p>Payment Method: @Model.PaymentMethod</p>
+        </div>
+    </div>*@
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach (var order in Model)
+        {
+            @*<h4>Order Details</h4>
+            <p>Pizza Name: @item.PizzaName</p>
+            <p>User: @item.UserFullName</p>
+            <p>Price: @item.Price</p>
+            <p>Payment method: @item.PaymentMethod</p>*@
+            <partial name="~/Views/Shared/Partial/_OrderDetails.cshtml" for="@order"/>
+        }
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-md-5">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <h3>Order number:@i</h3>
+            <p>Pizza name: @Model[i].PizzaName</p>
+            <p>User: @Model[i].UserFullName</p>
+            <p>Price: @Model[i].Price</p>
+            <p>Payment method: @Model[i].PaymentMethod</p>
+            @if (Model[i].Delivered)
+            {
+                <p>Your order is delivered</p>
+            }
+            else
+            {
+                <p>Your order is not delivered.Please contact number:111 222 333</p>
+            }
+            <partial name="~/Views/Shared/Partial/_OrderDetails.cshtml" for="@Model[i]"/>
+        }
+    </div>
+</div>*@
