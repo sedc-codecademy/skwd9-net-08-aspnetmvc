@@ -1,0 +1,112 @@
+﻿@*@model List<OrderListViewModel>*@
+@model MasterOrderListViewModel
+@*<h1>@ViewData["Title"]</h1>*@
+<h1>@ViewBag.Title</h1>
+
+
+@* List using Order Model *@
+@*<ul>
+        <li>
+            Name: @Model.User.FirstName
+        </li>
+        <li>
+            Pizza: @Model.Pizza
+        </li>
+        <li>
+            Price: @Model.Price
+        </li>
+        <li>
+            Address: @Model.User.Address
+        </li>
+    </ul>*@
+@* List using ViewData *@
+@*<ul>
+        <li>
+            Name: @(((SEDC.PizzaApp.Models.Domain.Order)ViewData["Order"]).User.FirstName)
+        </li>
+        <li>
+            Pizza: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).Pizza)
+        </li>
+        <li>
+            Price: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).Price)
+        </li>
+        <li>
+            Address: @((ViewData["Order"] as SEDC.PizzaApp.Models.Domain.Order).User.Address)
+        </li>
+    </ul>*@
+
+@* List using ViewBag *@
+@*<ul>
+        <li>
+            Name: @ViewBag.Order.User.FirstName
+        </li>
+        <li>
+            Pizza: @ViewBag.Naracka.Pizza
+        </li>
+        <li>
+            Price: @ViewBag.Order.Price
+        </li>
+        <li>
+            Address: @ViewBag.Order.User.Address
+        </li>
+    </ul>*@
+
+
+@* List using OrderDetailsViewModel *@
+@*@for (int i = 0; i < Model.Count; i++)
+    {*@
+@*<ul>
+        <li>
+            Name: @("Mr./Mrs. " + Model[i].FullName)
+        </li>
+        <li>
+            Pizza: @Model[i].Pizza
+        </li>
+        <li>
+            Price: @Model[i].Price
+        </li>
+        <li>
+            Price + Delivery: @(Model[i].Price + 40)
+        </li>
+        <li>
+            Address: @Model[i].Address
+        </li>
+        <li>
+            Contact: @Model[i].Contact
+        </li>
+        @{
+            string status = "Not yet delivered!";
+            if (Model[i].IsDelivered)
+            {
+                status = "Order has been delivered!";
+            }
+        }
+        <li>
+            Status: @status
+        </li>
+        <li>
+            Status from model: @Model[i].Status
+        </li>
+        @if (!Model[i].IsDelivered)
+        {
+            <li>
+                Your delivery is on the way! For any delay contact #77123456
+            </li>
+        }
+    </ul>*@
+@*@Html.Partial("~/Views/Shared/_OrderItem.cshtml", Model[i])
+    }*@
+<h1>Delivered orders: @Model.CountOfDeliveredOrders</h1>
+@for (int i = 0; i < Model.CountOfDeliveredOrders; i++)
+{
+    @Html.Partial("~/Views/Shared/_OrderItem.cshtml", Model.DeliveredOrders[i])
+}
+
+<h1>Pending Orders: @Model.CountOfPendingOrders</h1>
+@for (int i = 0; i < Model.CountOfPendingOrders; i++)
+{
+    @Html.Partial("~/Views/Shared/_OrderItem.cshtml", Model.PendingOrders[i])
+}
+<h4>Time:</h4>
+<p>@DateTime.UtcNow</p>
+@*<p>@Math.PI</p>*@
