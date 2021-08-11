@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SEDC.AspNet.Mvc.Class03.App.Models.DataTransferModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -21,5 +22,7 @@ namespace SEDC.AspNet.Mvc.Class03.App.Models.ViewModels
 
         [Display(Name = "Active subscription")]
         public string IsSubscribed { get; set; }
+
+        public UserDto UserDetails { get; set; }
     }
 }

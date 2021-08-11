@@ -1,0 +1,6 @@
+﻿@model OrderDetailsViewModel
+
+<p>Pizza name: @Model.PizzaName</p>
+<p>User: @($"Mr/Mrs: {Model.UserFullName}")</p>
+<p>Payment method: @Model.PaymentMethod</p>
+<p>Order price: @(Model.Price + Model.Price*0.1) DEN </p>

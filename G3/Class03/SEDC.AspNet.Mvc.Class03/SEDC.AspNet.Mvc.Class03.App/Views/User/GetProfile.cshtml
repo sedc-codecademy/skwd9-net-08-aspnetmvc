@@ -6,6 +6,25 @@
 
 <h1>GetProfile</h1>
 
+@if (ViewData["ProfileInfo"] != null)
+{
+    <div class="alert alert-info" role="alert">
+        @ViewData["ProfileInfo"]
+    </div>
+}
+
+@*@if(ViewBag.DummyData != null)
+{
+    var str = string.Empty;
+    foreach(var item in ViewBag.DummyData)
+    {
+        str += item + ",";
+    }
+    <div>
+        @str
+    </div>
+}*@
+
 <div>
     <h4>UserDetailsVM</h4>
     <hr />
