@@ -1,0 +1,19 @@
+﻿@model OrderListVM
+
+<h1>@ViewData["Title"]</h1>
+<p>This is the orders page</p>
+<h1>Our first Pizza ever to be delivered was:</h1>
+<p>@Model.FirstPizza</p>
+<h3>Our first customer is:</h3>
+<p>@Model.FirstCustomerName</p>
+<h3>Total orders since we started delivering:</h3>
+<p>@Model.NumberOfOrders</p>
+
+<a class="btn btn-light" asp-action="Create" asp-controller="Order">Create order</a>
+
+@{ 
+    foreach(var order in Model.Orders)
+    {
+        @Html.Partial("~/Views/Shared/_orderPartial.cshtml", order)
+    }
+}

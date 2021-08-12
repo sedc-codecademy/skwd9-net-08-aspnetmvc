@@ -1,0 +1,44 @@
+﻿@model OrderVM
+
+@if(ViewBag.Title != null)
+{
+    <h1>@ViewBag.Title</h1>
+}
+
+@{ 
+    string status = "The order is not yet delivered. Please be patient";
+    if(Model.Delivered)
+    {
+        status = "The order is delivered";
+    }
+
+    var fullName = string.Format("{0} {1}", Model.FirstName, Model.LastName).ToUpper();
+    var phone = string.Format("{0:(###) ###-####}", Model.Phone);
+}
+
+<ul>
+    <li>@Html.Label("FirstName") : @Model.FirstName</li>
+    <li>@Html.LabelFor(x => x.LastName) : @Model.LastName</li>
+    <li>@Html.LabelFor(x => x.Address) : @Model.Address</li>
+    <li>@Html.LabelFor(x => x.Phone) : @phone</li>
+    <li>@Html.LabelFor(x => x.PizzaName) : @Model.PizzaName</li>
+    <li>@Html.LabelFor(x => x.Size) : @Model.Size</li>
+    <li>@Html.LabelFor(x => x.Delivered) : @status</li>
+</ul>
+
+<hr />
+
+<ul>
+    <li>
+    <label asp-for="FirstName"></label>
+    <span>: @Model.FirstName</span>
+    </li>
+    <li>
+        <label asp-for="LastName"></label>
+        <span>: @Model.LastName</span>
+    </li>
+    <li>
+        <label asp-for="Address"></label>
+        <span>: @Model.Address</span>
+    </li>
+</ul>

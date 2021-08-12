@@ -2,7 +2,7 @@
 
     <hr />
     <div class="row">
-        <div class="col-12">
+        <div class="col-10">
             Order No: @Model.Id | Pizza: @Model.Pizza.Name | Size: @Model.Pizza.Size | Price: @Model.Price $ |
             @{
                 if (Model.Delivered)
@@ -14,5 +14,9 @@
                     <button class="btn btn-danger">Not Delivered</button>
                 }
             }
+        </div>
+        <div class="col-2">
+            @Html.ActionLink("Details", "Details", "Order", new { id = Model.Id }, new { @class = "btn btn-info" })
+            <a class="btn btn-outline-danger" asp-action="Details" asp-controller="Order" asp-route-id="@Model.Id">Details</a>
         </div>
     </div>
