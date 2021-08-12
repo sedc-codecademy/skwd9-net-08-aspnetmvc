@@ -1,0 +1,19 @@
+﻿@model Book
+
+<h2>Book details:</h2>
+<h4>ID: @Model.Id </h4>
+
+@if (Model.Id == 1) {
+    @:<h4>This the book you have been looking for</h4>
+}
+
+@{
+    Book book2 = StaticDB.Books.SingleOrDefault(q => q.Id.Equals(2));
+    @:<h4>@book2.Title</h4>
+}
+
+<h4>Name: @Model.Title </h4>
+<h4>Author: @Model.AuthorId </h4>
+<h4>Publishing House: @Model.PublishingHouseId </h4>
+<h4>Fullname: @Model.GetBookFullName()</h4>
+<h4>Publishing House Name: @ViewBag.PublishingHouseName</h4>
