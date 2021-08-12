@@ -59,5 +59,36 @@ namespace SEDC.AspNet.Class03.App.Controllers
 
             return View(orderListVM);
         }
+
+        [HttpGet("{id:int}")]
+        public IActionResult Details(int id)
+        {
+            ViewBag.Title = "These is your order details ";
+            var order = PizzaDatabase.Orders.FirstOrDefault(o => o.Id == id);
+
+            if(order == null)
+            {
+                // redirect
+                TempData["Error"] = $"Order with id {id} was not found!";
+                return RedirectToAction("Index");
+            }
+
+            var user = PizzaDatabase.Users.FirstOrDefault(u => u.Id == order.UserId);
+            var pizza = PizzaDatabase.Pizzas.FirstOrDefault(p => p.Id == order.PizzaId);
+            var address = PizzaDatabase.Addresses.FirstOrDefault(x => x.Id == user.AddressId);
+
+            var orderVm = new OrderVM
+            {
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Address = address.Name,
+                Phone = user.Phone,
+                PizzaName = pizza.Name,
+                Size = pizza.Size,
+                Delivered = order.Delivered
+            };
+
+            return View(orderVm);
+        }
     }
 }

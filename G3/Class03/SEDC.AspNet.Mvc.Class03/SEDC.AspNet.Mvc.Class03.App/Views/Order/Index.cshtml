@@ -9,4 +9,9 @@
 <h3>Total orders since we started delivering:</h3>
 <p>@Model.NumberOfOrders</p>
 
-@* partial view *@
+@{ 
+    foreach(var order in Model.Orders)
+    {
+        @Html.Partial("~/Views/Shared/_orderPartial.cshtml", order)
+    }
+}
