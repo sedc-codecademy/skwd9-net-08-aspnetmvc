@@ -1,0 +1,20 @@
+﻿@model OrderDetailsViewModel
+
+<p>This is from the partial view</p>
+<div class="row">
+    <div class="col-md-4">
+        <p>Id: @Model.Id</p>
+        <p>Payment Method: @Model.PaymentMethod</p>
+        <p>Pizza name:@Model.PizzaName</p>
+        <p>User name: @Model.UserFullName</p>
+        <p>Price: @Model.Price</p>
+        @if (Model.Delivered)
+        {
+            <p> Your order is delivered.</p>
+        }
+        else
+        {
+            <p> Your order is not delivered.</p>
+        }
+    </div>
+</div>

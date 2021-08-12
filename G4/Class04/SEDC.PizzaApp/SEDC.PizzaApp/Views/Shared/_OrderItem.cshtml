@@ -1,0 +1,40 @@
+﻿@model OrderListViewModel
+@{
+//string status = "Not yet delivered!";
+//if (Model.IsDelivered)
+//{
+//    status = "Order has been delivered!";
+//}
+}
+<ul>
+    <li>
+        Name: @("Mr./Mrs. " + Model.FullName)
+    </li>
+    @*<li>
+        Pizza: @Model.Pizza
+    </li>*@
+    <li>
+        Price: @Model.Price
+    </li>
+    @*<li>
+        Price with delivery: @(Model.Price + 40)
+    </li>*@
+    @*<li>
+        Address: @Model.Address
+    </li>*@
+    @*<li>
+        Contact: @Model.Contact
+    </li>*@
+    @*<li>
+        Status: @status
+    </li>*@
+    @*<li>
+        Status from model: @Model.Status
+    </li>*@
+    @*@if (!Model.IsDelivered)
+    {
+        <li>
+            Delivery is on the way!
+        </li>
+    }*@
+</ul>

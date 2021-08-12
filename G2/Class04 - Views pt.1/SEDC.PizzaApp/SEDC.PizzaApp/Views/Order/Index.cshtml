@@ -1,0 +1,22 @@
+﻿@model List<OrderListViewModel> 
+@{ 
+    Layout = "_Layout"; //override of ViewStart
+}
+
+<partial name="~/Views/Shared/Partials/_OrderGreetingPartial.cshtml"/>
+<h2>List of orders:</h2>
+
+@{ 
+
+    foreach(OrderListViewModel orderModel in Model)
+{
+    <p>Pizza name: @orderModel.PizzaName - User: @orderModel.UserFullName</p>
+}
+
+}
+
+<h4>@ViewData["Message"]</h4>
+<h5>@ViewData["Date"]</h5>
+
+
+<h6>Date and time: @DateTime.Now.ToShortDateString() @DateTime.Now.ToShortTimeString()</h6>

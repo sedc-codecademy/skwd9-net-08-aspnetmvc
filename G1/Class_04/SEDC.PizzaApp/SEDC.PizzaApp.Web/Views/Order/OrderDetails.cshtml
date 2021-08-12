@@ -1,0 +1,69 @@
+﻿@model OrderDetailsViewModel
+
+@{
+    var orderDetails = ViewData["OrderDetails"] as SEDC.PizzaApp.Web.Models.ViewModels.OrderDetailsViewModel;
+    string orderStatus = "Order is not delivered";
+
+    if (Model.Delivered)
+    {
+        orderStatus = "Order is delivered";
+    }
+}
+
+<partial name="~/Views/Shared/Partial/_Greeting.cshtml" />
+
+@*<h2>Order details:</h2>
+    <ul>
+        <li>@Model.Id</li>
+        <li>Payment method: @Model.PaymentMethod</li>
+        <li>Pizza name: @Model.PizzaName</li>
+        <li>Price: @Model.Price</li>
+        <li>Username: @Model.UserFullName</li>
+        <li>@orderStatus</li>
+    </ul>
+
+
+    @if (Model.Delivered)
+    {
+        <p>Order is delivered.</p>
+    }
+    else
+    {
+        <p>Your order is not delivered. Please contact number:111 222 333</p>
+    }*@
+
+@*@if (Model.Price > 5)
+    {
+        <p>You ordered:@Model.PizzaName</p>
+    }
+    else if (Model.Price == 4)
+    {
+        <p>You prdered:@Model.PizzaName</p>
+    }
+    else if (Model.Price < 4)
+    {
+        <p>You ordered: @Model.PizzaName</p>
+    }*@
+
+@*<ul>
+        <li>@("Mr./Mrs " + Model.UserFullName)</li>
+        <li>@(Model.Price + 35)</li>
+        <li>@(string.Format("{0:c}",Model.Price))</li>
+    </ul>*@
+@*<h3>Datetime now:</h3>
+    <p>@DateTime.Now</p>*@
+
+@*<p>@ViewData["OrderDetails"]</p>*@
+
+<h2>Order details from ViewData object:</h2>
+<ul>
+    <li>@orderDetails.Id</li>
+    <li>@orderDetails.PaymentMethod</li>
+    <li>@orderDetails.PizzaName</li>
+    <li>@orderDetails.Price</li>
+    <li>@orderDetails.UserFullName</li>
+</ul>
+
+<h3>Order details</h3>
+<partial name="~/Views/Shared/Partial/_OrderDetails.cshtml" for="@Model"/>
+@*@Html.Partial("~/Views/Shared/Partial/_OrderDetails.cshtml")*@
