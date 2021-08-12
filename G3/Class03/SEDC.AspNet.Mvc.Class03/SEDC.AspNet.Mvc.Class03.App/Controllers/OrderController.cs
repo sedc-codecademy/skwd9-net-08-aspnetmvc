@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SEDC.AspNet.Mvc.Class03.App.Database;
+using SEDC.AspNet.Mvc.Class03.App.Models.DataAccessModels;
 using SEDC.AspNet.Mvc.Class03.App.Models.DataTransferModels;
 using SEDC.AspNet.Mvc.Class03.App.Models.ViewModels;
 using System;
@@ -89,6 +90,56 @@ namespace SEDC.AspNet.Class03.App.Controllers
             };
 
             return View(orderVm);
+        }
+
+        [HttpGet("create")]
+        public IActionResult Create(string error)
+        {
+            ViewBag.Error = error;
+            return View(new CreateOrderVM());
+        }
+
+        [HttpPost("create")]
+        public IActionResult Create(CreateOrderVM request)
+        {
+            var pizza = PizzaDatabase.Pizzas.FirstOrDefault(
+                p => p.Name == request.PizzaName && p.Size == request.Size);
+
+            if(pizza == null)
+            {
+                return RedirectToAction("Create", new { error = "There is no pizza like that in the menu" });
+            }
+
+            var user = new User
+            {
+                Id = PizzaDatabase.Users.Count + 1,
+                FirstName = request.FirstName,
+                LastName = request.LastName,
+                Phone = request.Phone
+            };
+
+            var address = new Address
+            {
+                Id = PizzaDatabase.Addresses.Count + 1,
+                Name = request.Address,
+                UserId = user.Id
+            };
+
+            user.AddressId = address.Id;
+
+            var order = new Order
+            {
+                Id = PizzaDatabase.Orders.Count + 1,
+                Delivered = false,
+                PizzaId = pizza.Id,
+                UserId = user.Id
+            };
+
+            PizzaDatabase.Users.Add(user);
+            PizzaDatabase.Addresses.Add(address);
+            PizzaDatabase.Orders.Add(order);
+
+            return RedirectToAction("Index");
         }
     }
 }

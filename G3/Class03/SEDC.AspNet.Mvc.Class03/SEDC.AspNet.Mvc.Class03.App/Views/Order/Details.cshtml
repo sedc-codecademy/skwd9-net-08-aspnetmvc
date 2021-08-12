@@ -25,3 +25,20 @@
     <li>@Html.LabelFor(x => x.Size) : @Model.Size</li>
     <li>@Html.LabelFor(x => x.Delivered) : @status</li>
 </ul>
+
+<hr />
+
+<ul>
+    <li>
+    <label asp-for="FirstName"></label>
+    <span>: @Model.FirstName</span>
+    </li>
+    <li>
+        <label asp-for="LastName"></label>
+        <span>: @Model.LastName</span>
+    </li>
+    <li>
+        <label asp-for="Address"></label>
+        <span>: @Model.Address</span>
+    </li>
+</ul>

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SEDC.AspNet.Mvc.Class03.App.Models.ViewModels
 {
-    public class OrderVM
+    public class CreateOrderVM
     {
         [Display(Name = "Firstname")]
         public string FirstName { get; set; }
@@ -26,11 +26,5 @@ namespace SEDC.AspNet.Mvc.Class03.App.Models.ViewModels
 
         [Display(Name = "Pizza size")]
         public PizzaSize Size { get; set; }
-
-        [Display(Name = "Status")]
-        public bool Delivered { get; set; }
-
-        [Display(Name = "Price")]
-        public double Price { get; set; }
     }
 }

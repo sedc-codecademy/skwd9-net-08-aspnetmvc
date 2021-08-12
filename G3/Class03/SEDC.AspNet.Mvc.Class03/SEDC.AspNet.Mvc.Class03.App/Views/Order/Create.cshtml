@@ -1,0 +1,51 @@
+﻿@model CreateOrderVM
+
+<h1>Order a pizza</h1>
+@if (ViewBag.Error != null)
+{
+    <h4 class="alert alert-danger" role="alert">@ViewBag.Error</h4>
+    <p>Please enter the correct data to order pizza</p>
+}
+@*
+@using (Html.BeginForm())
+{
+    <h3>User information:</h3>
+
+    @Html.LabelFor(x => x.FirstName)
+    @Html.TextBoxFor(x => x.FirstName)
+    @Html.LabelFor(x => x.LastName)
+    @Html.TextBoxFor(x => x.LastName)
+    @Html.LabelFor(x => x.Address)
+    @Html.TextBoxFor(x => x.Address)
+    @Html.LabelFor(x => x.Phone)
+    @Html.TextBoxFor(x => x.Phone, "number")
+    @Html.LabelFor(x => x.PizzaName)
+    @Html.TextBoxFor(x => x.PizzaName)
+    @Html.LabelFor(x => x.Size)
+    @Html.DropDownListFor(x => x.Size, Html.GetEnumSelectList(Model.Size.GetType())) comment this code out
+    @Html.DropDownListFor(x => x.Size, Html.GetEnumSelectList<PizzaSize>())
+    <br />
+    <br />
+    <button type="submit" class="btn btn-outline-dark">Order</button>
+}*@
+
+
+<form asp-route="Create" method="post">
+    <h3>User information:</h3>
+
+    <label asp-for="FirstName"></label>
+    <input type="text" asp-for="FirstName" />
+    <label asp-for="LastName"></label>
+    <input type="text" asp-for="LastName" />
+    <label asp-for="Address"></label>
+    <input type="text" asp-for="Address" />
+    <label asp-for="Phone"></label>
+    <input type="number" asp-for="Phone" />
+    <label asp-for="PizzaName"></label>
+    <input type="text" asp-for="PizzaName" />
+    <label asp-for="Size"></label>
+    <select asp-for="Size" asp-items="Html.GetEnumSelectList<PizzaSize>()">
+    </select>
+
+    <button type="submit" class="btn btn-outline-info">Order</button>
+</form>

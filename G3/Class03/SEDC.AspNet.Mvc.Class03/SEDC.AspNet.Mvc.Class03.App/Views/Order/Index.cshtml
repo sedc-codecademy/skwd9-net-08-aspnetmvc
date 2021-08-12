@@ -9,6 +9,8 @@
 <h3>Total orders since we started delivering:</h3>
 <p>@Model.NumberOfOrders</p>
 
+<a class="btn btn-light" asp-action="Create" asp-controller="Order">Create order</a>
+
 @{ 
     foreach(var order in Model.Orders)
     {

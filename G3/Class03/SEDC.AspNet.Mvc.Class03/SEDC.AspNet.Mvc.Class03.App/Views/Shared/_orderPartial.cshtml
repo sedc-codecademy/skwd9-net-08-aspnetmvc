@@ -16,7 +16,7 @@
             }
         </div>
         <div class="col-2">
-            @Html.ActionLink("Details", "Details", "Order", new { id = Model.Id }, new { @class = "btn btn-info" });
+            @Html.ActionLink("Details", "Details", "Order", new { id = Model.Id }, new { @class = "btn btn-info" })
             <a class="btn btn-outline-danger" asp-action="Details" asp-controller="Order" asp-route-id="@Model.Id">Details</a>
         </div>
     </div>
