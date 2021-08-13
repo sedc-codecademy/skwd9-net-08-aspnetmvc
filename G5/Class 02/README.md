@@ -249,7 +249,7 @@ public IActionResult Contact(int? id) // localhost:port/home/contact/12
 }
 ```
 
-![How a Controller works](img/controller.png)
+![controller](https://user-images.githubusercontent.com/61802834/129342786-0e99c1be-9233-4a34-909d-957a27a21d4a.png)
 
 ## Extra Materials 📘
 
