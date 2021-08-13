@@ -55,6 +55,3 @@ As you can imagine writing code in a huge chunk of a document is not really the 
 - [MVC explained as a sandwich shop](https://www.freecodecamp.org/news/simplified-explanation-to-mvc-5d307796df30/)
 - [Cool MVC video](https://www.youtube.com/watch?v=1IsL6g2ixak)
 
-## Contact
-stojanovskatanja@hotmail.com
-manasiev.design@gmail.com
