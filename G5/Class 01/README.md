@@ -21,7 +21,3 @@ This repository will contain every piece of material about the subject. It will 
 * [Little ASP.NET Core Book](https://nbarbettini.gitbooks.io/little-asp-net-core-book/content/)
 * [300+ Samples for ASP.NET](https://github.com/dodyg/practical-aspnetcore/tree/2.1-LTS)
 
-## Contact
-Trainer: stojanovskatanja@hotmail.com
-
-Assistant: manasiev.design@gmail.com
