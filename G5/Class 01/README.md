@@ -17,7 +17,8 @@ When building applications with the MVC design pattern in mind we want to divide
 5. **MODEL** returns data to the **CONTROLLER**
 6. **CONTROLLER** updates the **VIEW**
 7. The user sees the data they requested in the **VIEW**
-   ![MVC how it works - Animated](img/mvc1.gif)
+
+![mvc1 (1)](https://user-images.githubusercontent.com/61802834/129343528-da1e41f9-6072-47bf-b1d0-6cdb8e211fab.gif)
 
 ### Controller
 
@@ -35,7 +36,8 @@ The model is basically an entity that stores data. This data is usually business
 ### View
 
 View is a representation of our application that concerns the users that are using the application. The view is tasked with handling the presentation of the data to the user. The view is connected to the controller and for any data that it needs to present to the user, it calls the controller to fetch it. It does not know what kind of data structure the application is using, nor it knows how data is kept. It just asks for things and gets results from the controller.
-![MVC how it works - Example](img/mvc2.png)
+
+![mvc2](https://user-images.githubusercontent.com/61802834/129343554-319b8338-d2dc-4316-bc36-008ad3b72335.png)
 
 ## Why MVC is awesome 🔹
 
