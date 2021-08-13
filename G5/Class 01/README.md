@@ -17,7 +17,8 @@ When building applications with the MVC design pattern in mind we want to divide
 5. **MODEL** returns data to the **CONTROLLER**
 6. **CONTROLLER** updates the **VIEW**
 7. The user sees the data they requested in the **VIEW**
-   ![MVC how it works - Animated](img/mvc1.gif)
+
+  ![mvc1 (1)](https://user-images.githubusercontent.com/61802834/129340737-cfd2b150-ff7b-4326-bb1d-a92216135f78.gif)
 
 ### Controller
 
