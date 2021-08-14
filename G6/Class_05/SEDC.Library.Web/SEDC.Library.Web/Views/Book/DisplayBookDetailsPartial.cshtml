@@ -1,0 +1,7 @@
+﻿@model Book
+
+<h4>Name: @Model.Title </h4>
+<h4>Author: @Model.AuthorId </h4>
+<h4>Publishing House: @Model.PublishingHouseId </h4>
+<h4>Fullname: @Model.GetBookFullName()</h4>
+@Html.Partial("Separator")

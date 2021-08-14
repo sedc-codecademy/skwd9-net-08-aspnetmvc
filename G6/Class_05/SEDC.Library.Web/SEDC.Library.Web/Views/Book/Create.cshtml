@@ -1,0 +1,17 @@
+﻿@model Book
+
+<h1>Create new book</h1>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(x => x.Title)
+    @Html.TextBoxFor(x => x.Title)
+    @Html.Partial("Separator")
+
+    @Html.DropDownListFor(x => x.AuthorId, new SelectList(ViewBag.Authors, "Id", "Name"));
+    @Html.Partial("Separator")
+
+    @Html.DropDownListFor(x => x.PublishingHouseId, new SelectList(StaticDB.PublishingHouses, "Id", "Name"));
+    @Html.Partial("Separator")
+
+    <button type="submit">Create Book</button>
+}

@@ -1,0 +1,18 @@
+﻿@model Book
+
+<h2>Book details:</h2>
+<h4>@Html.Label("Id") @Html.Display("Id") </h4>
+<h4>@Html.Label("Price"): @Html.Display("Price") </h4>
+
+@if (Model.Id == 1)
+{
+    @:<h4>This the book you have been looking for</h4>
+}
+
+@{
+    Book book2 = StaticDB.Books.SingleOrDefault(q => q.Id.Equals(2));
+    @:<h4>@book2.Title</h4>
+}
+
+@Html.Partial("DisplayBookDetailsPartiaLHTMLHelpers", Model)
+<h4>Publishing House Name: @ViewBag.PublishingHouseName</h4>

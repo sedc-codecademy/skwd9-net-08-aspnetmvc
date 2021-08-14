@@ -1,0 +1,7 @@
+﻿@model Book
+
+<h4>@Html.Label("Title") @Html.Display("Title") </h4>
+<h4>@Html.Label("AuthorId") @Html.Display("AuthorId") </h4>
+<h4>@Html.Label("PublishingHouseId"): @Html.Display("PublishingHouseId") </h4>
+@*<h4>@Html.LabelFor(x=>x.GetBookFullName()): @Html.DisplayFor(x => x.GetBookFullName())</h4>*@
+@Html.Partial("Separator")

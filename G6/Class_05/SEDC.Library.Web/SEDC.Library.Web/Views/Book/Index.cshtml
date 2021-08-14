@@ -1,0 +1,45 @@
+﻿<h1 class="text-center">Welcome to our library app!</h1>
+<p class="text-center">Here you can find a lot of interesting books!</p>
+
+@{
+    List<Book> books = new List<Book>();
+
+    books.Add(new Book
+    {
+        Id = 1,
+        Title = "Lord Of The Rings 1"
+    });
+
+    books.Add(new Book
+    {
+        Id = 2,
+        Title = "Lord Of The Rings 2"
+    });
+
+    books.Add(new Book
+    {
+        Id = 3,
+        Title = "Lord Of The Rings 3"
+    });
+
+    books.Add(new Book
+    {
+        Id = 4,
+        Title = "Lord Of The Rings 4"
+    });
+
+    Book book3 = books.SingleOrDefault(x => x.Id == 3);
+}
+
+<h4 class="text-center">@book3.Title</h4>
+<p class="text-center">This is before foreach expression</p>
+<p>--------------------------------</p>
+@Html.Partial("Separator")
+@Html.Partial("_Footer")
+<p>--------------------------------</p>
+
+@foreach (Book book in books)
+{
+<h4 class="text-center">@book.Title</h4>
+}
+

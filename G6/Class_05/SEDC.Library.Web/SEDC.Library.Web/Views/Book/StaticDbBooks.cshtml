@@ -1,0 +1,5 @@
+﻿@foreach (Book item in StaticDB.Books)
+{
+    @*@Html.Partial("DisplayBookDetailsPartial", item);*@
+    <partial name="DisplayBookDetailsPartial" model="item"/>
+}
