@@ -1,0 +1,19 @@
+﻿@model List<OrderListViewModel> 
+
+
+<partial name="~/Views/Shared/Partials/_OrderGreetingPartial.cshtml"/>
+<a asp-action="CreateOrder">Create Order</a>
+<h2>List of orders:</h2>
+
+@{ 
+
+    foreach(OrderListViewModel orderModel in Model)
+{
+    <p>Pizza name: @orderModel.PizzaName - User: @orderModel.UserFullName</p>
+    <a asp-action="Details" asp-route-id="@orderModel.Id">See details</a>
+    <a asp-action="EditOrder" asp-route-id="@orderModel.Id">Edit order</a>
+    <a asp-action="Delete" asp-route-id="@orderModel.Id">Delete order</a>
+}
+
+}
+

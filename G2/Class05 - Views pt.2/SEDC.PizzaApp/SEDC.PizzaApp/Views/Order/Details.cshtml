@@ -1,0 +1,24 @@
+﻿
+@model OrderDetailsViewModel
+
+<partial name="~/Views/Shared/Partials/_OrderGreetingPartial.cshtml" />
+
+<h2>Order details:</h2>
+
+<partial name="~/Views/Shared/Partials/_OrderDetailsPartial.cshtml" for="@Model" />
+
+@if (Model.Delivered)
+{
+    <p>The order is delivered</p>
+}
+else
+{
+    <p>The order was not delivered</p>
+}
+
+<a asp-action="Index">Back to orders</a> @*Order/Index*@
+@Html.ActionLink("List all orders", "Index"); @*Order/Index*@
+
+<br/>
+<a asp-controller="Home" asp-action="Index" target="_blank">Back to home</a>
+@Html.ActionLink("Home page", "Index", "Home");
