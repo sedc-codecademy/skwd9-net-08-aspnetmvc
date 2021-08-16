@@ -1,0 +1,16 @@
+﻿@model Order
+@{
+   string status = "Not delivered";
+
+   if (Model.Delivered)
+   {
+      status = "Delivered!";
+   }
+} 
+
+<h4>Order item</h4>
+<ul>
+   <li>ID: @Model.Id</li>
+   <li>Full name: @Model.User.GetFullName()</li>
+   <li>Status: @status</li>
+</ul>

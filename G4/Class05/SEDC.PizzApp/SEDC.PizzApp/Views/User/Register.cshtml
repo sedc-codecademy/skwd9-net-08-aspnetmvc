@@ -1,0 +1,29 @@
+﻿@model UserViewModel
+
+<!-- HTML HELPER -->
+@using (Html.BeginForm())
+{
+   @Html.LabelFor(x => x.FirstName)
+   @Html.TextBoxFor(x => x.FirstName)
+   <br/>
+   @Html.LabelFor(x => x.LastName)
+   @Html.TextBoxFor(x => x.LastName)
+   <br/>
+   <button type="submit">Submit</button>
+}
+
+<br/>
+<br/>
+<br/>
+<br/>
+
+<!-- TAG HELPER -->
+<form asp-controller="User" asp-action="Register" method="post">
+   <label asp-for="FirstName"></label>
+   <input asp-for="FirstName" />
+   <br />
+   <label asp-for="LastName"></label>
+   <input asp-for="LastName" />
+   <br/>
+   <button type="submit">Submit</button>
+</form>

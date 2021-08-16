@@ -1,0 +1,67 @@
+﻿@model Order
+<!-- LINKS -->
+<!-- HTML Helper -->
+@Html.ActionLink("Back to home", "Index", "Home")
+@Html.ActionLink("Back to home",
+   "Index", "Home", new { id = 0 })
+
+<br />
+
+<!-- Tag Helper -->
+<a asp-controller="Home" asp-action="Index">Back to home</a>
+<a asp-controller="Home" asp-action="Index" asp-route-id="0">Back to home</a>
+
+<br />
+
+<!-- DISPLAY -->
+<!-- HTML Helper -->
+@Html.Display("Pizza")
+@Html.DisplayFor(x => x.Pizza)
+
+<br />
+
+<!-- LABELS -->
+<!-- HTML Helper -->
+@Html.Label("Pizza")
+@Html.LabelFor(x => x.Pizza)
+
+<br />
+
+<!-- Tag helper -->
+<label asp-for="Pizza"></label>
+
+<br />
+
+<!-- TEXTBOX -->
+<!-- HTML Helper -->
+@Html.TextBox("Pizza")
+@Html.TextBoxFor(x => x.Pizza)
+
+<br />
+
+<input asp-for="Pizza" />
+
+<br />
+
+<!-- DROPDOWN LIST -->
+<!-- HTML Helper-->
+@Html.DropDownListFor(x => x.Size, 
+   Html.GetEnumSelectList(Model.Size.GetType()))
+@Html.DropDownListFor(x => x.Size, 
+   Html.GetEnumSelectList(Model.Size.GetType()), "Select a pizza")
+
+<br />
+
+<!-- Tag Helper -->
+<select asp-for="Size" app-items="Html.GetEnumSelectList<Size>()"></select>
+<select asp-for="Size" app-items="Html.GetEnumSelectList<Size>()">
+   <option value="">Select a pizza</option>
+</select>
+
+<!-- HIDDEN FIELD -->
+<!-- HTML Helper -->
+@Html.Hidden("Id")
+@Html.HiddenFor(x => x.Id)
+
+<!-- Tag helper -->
+<input type="hidden" asp-for="Id"/>
