@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Pizza";
+    Layout = "~/Views/Shared/_SecondLayout.cshtml";
+}
+
+<h2>Pizza list</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <p class="text-center">
+            @ViewData["Title"]
+        </p>
+        <p class="text-center">
+            @ViewData["NumberOfApp"]
+        </p>
+        <p class="text-center">
+            @ViewData["Pizza"]
+        </p>
+        <p class="text-center">
+            @ViewBag.Name
+        </p>
+        <p class="text-center">
+            @ViewBag.NumberOfPizzas
+        </p>
+        <p class="text-center">
+            @ViewBag.Pizza
+        </p>
+        <p class="text-center">
+            @ViewBag.Pizza.IsOnPromotion
+        </p>
+    </div>
+</div>
