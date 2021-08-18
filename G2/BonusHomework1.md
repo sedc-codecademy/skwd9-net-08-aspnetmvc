@@ -12,12 +12,12 @@
     > Member
     >
     > Reservation
-Implement the entities and their relations and all the CRUD operations.
+3. Implement the entities and their relations and all the CRUD operations.
 
-3. Add ViewModels for all entities.
+4. Add ViewModels for all entities.
 
-4. Create services for all entities.
+5. Create services for all entities.
 
-5. Navigation between the Views and Actions should be with appropriate HTML elements.
+6. Navigation between the Views and Actions should be with appropriate HTML elements.
 
-6. Create unique style for the Navigation Menu and the Layout of the Application 
+7. Create unique style for the Navigation Menu and the Layout of the Application 
