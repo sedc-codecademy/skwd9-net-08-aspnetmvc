@@ -1,15 +1,15 @@
 # **ASP .NET Bonus HomeWork**
 
-## Cinema App
+## Book Library App
 
-1. Create MVC arhitecture for Cinema app with ASP .Net Core 3.1.
+1. Create N tier arhitecture for Book Library app with ASP.Net Core 3.1 using MVC.
 
 2. Application should have at least 3 main Entities with Controllers, for example: 
-    > Cinema
+    > Author
     >
-    > Movie
+    > Book
     > 
-    > User
+    > Member
     >
     > Reservation
 Implement the entities and their relations and all the CRUD operations.
