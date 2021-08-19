@@ -1,0 +1,7 @@
+1.	Add a new Pizza domain model. Put it in the appropriate location following the 3-tier architecture. Populate the StaticDb with a few pizza objects.
+2.	Add a new PizzaRepository that implements the IRepository interface and has the method GetAll
+3.	Add a new PizzaService and interface which has the GetAll method. 
+4.	Add a new pizza controller with the following actions:
+ -	GetAll - returns a view that lists all the Pizzas in the Static Db. Accessible through the route localhost/menu. 
+
+Bonus: Create a new IPizzaRepository that extends the IRepository<Pizza> and defines a new method: GetByName(string name) and implement it in PizzaRepository. The search should be lower/upper case invariant. Add the corresponding methods in PizzaService and create an action in the pizza repository that returns a view with a single pizza and is accessible through localhost/menu/nameOfPizza.
