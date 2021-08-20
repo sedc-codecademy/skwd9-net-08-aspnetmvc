@@ -1,0 +1,11 @@
+﻿@model OrderDetailsViewModel
+
+
+<partial name="~/Views/Shared/Partial/_OrderDetails.cshtml" for="@Model"/>
+
+@Html.ActionLink("Home page","Index","Home")
+@Html.ActionLink("Orders","Index")
+
+
+<a asp-action="DeleteOrderPost" asp-controller="Order" asp-route-id="@Model.Id">Delete Order</a>
+@*//localhost/Order/OrderDetails/1 => GET Method*@
