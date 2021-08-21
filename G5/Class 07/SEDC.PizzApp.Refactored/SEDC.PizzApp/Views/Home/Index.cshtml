@@ -1,0 +1,40 @@
+﻿<!-- USING MODEL -->
+@*@model SEDC.PizzApp.Models.Order
+
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Order</h1>
+<ul>
+   <li>First name: @Model.User.FirstName</li>
+   <li>Last name: @Model.User.LastName</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price: @Model.Price denari</li>
+</ul>*@
+
+@*<h1>@ViewData["Title"]</h1>*@
+
+<!-- VIEW BAG-->
+
+@*<h1>@ViewBag.Title</h1>
+<ul>
+   <li>First name: @ViewBag.Order.User.FirstName</li>
+   <li>Last name: @ViewBag.Order.User.LastName</li>
+   <li>Pizza: @ViewBag.Order.Pizza</li>
+   <li>Price @ViewBag.Order.Price denari</li>
+</ul>*@
+
+
+<!-- VIEW MODEL -->
+@model OrderDetailsViewModel
+
+<h1>@Model.Pizza</h1>
+<ul>
+   <li>Address: @Model.Address</li>
+   <li>Full name: @Model.FullName</li>
+   <li>Contact (Phone): @Model.Contact</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price: @Model.Price</li>
+   <li>Price range: @Model.GetPriceRange()</li>
+</ul>
