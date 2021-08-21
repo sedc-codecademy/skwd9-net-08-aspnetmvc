@@ -1,8 +1,28 @@
-public class StaticDB { public static List<Pizza> Pizzas = new
-List<Pizza> { new Pizza { Id = 1, Name = "Margarita", IsOnPromotion =
-true, Price = 7 }, new Pizza { Id = 2, Name = "Napolitana",
-IsOnPromotion = false, Price = 3 }, new Pizza { Id = 3, Name = "Capri",
-IsOnPromotion = false, Price = 4 }, };
+
+        public static List<Pizza> Pizzas = new List<Pizza>
+        {
+            new Pizza
+            {
+                Id = 1,
+                Name = "Margarita",
+                IsOnPromotion = true,
+                Price = 7
+            },
+            new Pizza
+            {
+                Id = 2,
+                Name = "Napolitana",
+                IsOnPromotion = false,
+                Price = 3
+            },
+            new Pizza
+            {
+                Id = 3,
+                Name = "Capri",
+                IsOnPromotion = false,
+                Price = 4
+            },
+        };
 
         public static List<User> Users = new List<User>
         {
@@ -65,4 +85,3 @@ IsOnPromotion = false, Price = 4 }, };
                 PizzaStore ="Domino's"
             }
         };
-    }
