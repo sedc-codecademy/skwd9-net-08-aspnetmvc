@@ -1,0 +1,10 @@
+﻿@model OrderViewModel
+@{ ViewBag.Title = "Order Pizza"; }
+<h1>Order Pizza</h1>
+@using (Html.BeginForm())
+{
+<ul>
+    <li>@Html.LabelFor(x => x.FirstName)  @Html.TextBoxFor(x => x.FirstName)</li>
+</ul>
+<button class="btn btn-danger" type="submit">Order</button>
+}
