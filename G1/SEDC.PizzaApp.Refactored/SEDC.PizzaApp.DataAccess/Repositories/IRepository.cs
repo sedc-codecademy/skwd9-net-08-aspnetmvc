@@ -6,7 +6,7 @@ namespace SEDC.PizzaApp.DataAccess.Repositories
     {
         T GetById(int id);
         List<T> GetAll();
-        void Insert(T entity);
+        int Insert(T entity);
         void Update(T entity);
         void DeleteById(int id);
     }

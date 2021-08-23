@@ -16,15 +16,17 @@ namespace SEDC.PizzaApp.DataAccess
                 Name = "Margarita",
                 IsOnPromotion = true,
                 Price = 7,
-                PizzaSize = PizzaSize.Large
+                PizzaSize = PizzaSize.Large,
+                Image = "Margarita.png"
             },
             new Pizza
             {
                 Id = 2,
-                Name = "Napolitana",
+                Name = "Peperoni",
                 IsOnPromotion = false,
                 Price = 3,
-                PizzaSize = PizzaSize.Medium
+                PizzaSize = PizzaSize.Medium,
+                Image = "Peperoni.png"
             },
             new Pizza
             {
@@ -32,7 +34,8 @@ namespace SEDC.PizzaApp.DataAccess
                 Name = "Capri",
                 IsOnPromotion = false,
                 Price = 4,
-                PizzaSize = PizzaSize.Family
+                PizzaSize = PizzaSize.Family,
+                Image = "Kapri.png"
             },
         };
 
@@ -73,8 +76,7 @@ namespace SEDC.PizzaApp.DataAccess
                 Id=1,
                 PaymentMethod= PaymentMethod.Card,
                 User= Users.First(),
-                Pizza=Pizzas.First(),
-                Price= Pizzas.First().Price,
+                //Price= Pizzas.First().Price,
                 Delivered=true,
                 PizzaStore = "Jakomo"
             },
@@ -83,8 +85,7 @@ namespace SEDC.PizzaApp.DataAccess
                 Id=2,
                 PaymentMethod=PaymentMethod.Cash,
                 User=Users.FirstOrDefault(x=>x.Id==2),
-                Pizza= Pizzas.FirstOrDefault(x=>x.Id==2),
-                Price=Pizzas.FirstOrDefault(x=>x.Id==2).Price,
+                //Price=Pizzas.FirstOrDefault(x=>x.Id==2).Price,
                 Delivered=false,
                 PizzaStore = "Mama Italiana"
             },
@@ -93,8 +94,7 @@ namespace SEDC.PizzaApp.DataAccess
                 Id= 3,
                 PaymentMethod= PaymentMethod.Card,
                 User=Users.Last(),
-                Pizza=Pizzas.Last(),
-                Price= Pizzas.Last().Price,
+                //Price= Pizzas.Last().Price,
                 Delivered=false,
                 PizzaStore ="Domino's"
             }

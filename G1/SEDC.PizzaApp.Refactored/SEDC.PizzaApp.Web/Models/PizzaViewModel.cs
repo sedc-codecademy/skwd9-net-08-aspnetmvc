@@ -1,16 +1,17 @@
 ﻿using SEDC.PizzaApp.Domain.Enums;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace SEDC.PizzaApp.Domain.Models
+namespace SEDC.PizzaApp.Web.Models
 {
-    public class Pizza
+    public class PizzaViewModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public bool IsOnPromotion { get; set; }
         public double Price { get; set; }
         public PizzaSize PizzaSize { get; set; }
-        public List<PizzaOrder> PizzaOrders { get; set; }
         public string Image { get; set; }
     }
 }

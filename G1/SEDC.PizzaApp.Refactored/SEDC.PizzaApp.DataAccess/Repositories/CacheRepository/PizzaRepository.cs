@@ -30,11 +30,12 @@ namespace SEDC.PizzaApp.DataAccess.Repositories.CacheRepository
             return CacheDb.Pizzas.FirstOrDefault(x => x.Id == id);
         }
 
-        public void Insert(Pizza entity)
+        public int Insert(Pizza entity)
         {
             CacheDb.PizzaId++;
             entity.Id = CacheDb.PizzaId;
             CacheDb.Pizzas.Add(entity);
+            return entity.Id;
         }
 
         public void Update(Pizza entity)

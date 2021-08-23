@@ -36,7 +36,7 @@ namespace SEDC.PizzaApp.Web
             services.AddTransient<IRepository<Pizza>, PizzaRepository>();
 
             //registering bussiness layer services
-            services.AddTransient<IPizzaService, PizzaService>();
+            services.AddTransient<IPizzaOrderService, PizzaOrderService>();
             services.AddTransient<IUserService, UserService>();
         }
 

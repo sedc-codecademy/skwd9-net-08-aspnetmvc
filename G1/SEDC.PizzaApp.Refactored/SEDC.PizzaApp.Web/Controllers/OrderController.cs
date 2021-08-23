@@ -3,19 +3,18 @@ using SEDC.PizzaApp.Services.Services.Interface;
 
 namespace SEDC.PizzaApp.Web.Controllers
 {
-    public class PizzaController : Controller
+    public class OrderController : Controller
     {
-        private IPizzaService _pizzaService;
+        private IPizzaOrderService _pizzaService;
 
-        public PizzaController(IPizzaService pizzaService)
+        public OrderController(IPizzaOrderService pizzaService)
         {
             _pizzaService = pizzaService;
         }
+
         public IActionResult Index()
         {
-            var pizzas = _pizzaService.GetAllPizzas();
-           
-            return View(pizzas);
+            return View();
         }
     }
 }
