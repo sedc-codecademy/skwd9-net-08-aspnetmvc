@@ -1,0 +1,72 @@
+﻿@model Order
+
+<!-- ONE LINE VALUE -->
+<h2>Order - One Line Values</h2>
+<ul>
+   <li>ID: @Model.Id</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price: @Model.Price</li>
+   <li>User first name: @Model.User.FirstName</li>
+   <li>User last name: @Model.User.LastName</li>
+   <li>User full name: @Model.User.GetFullName()</li>
+</ul>
+
+<h4>Time: </h4>
+<p>@DateTime.Now</p>
+
+<!-- ONE LINE EXPRESSION -->
+<h2>Order - One Line Expression</h2>
+<ul>
+   <li>ID: @Model.Id</li>
+   <li>Full name: @("Mr." + Model.User.FirstName + Model.User.LastName)</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price + Delivery: @(Model.Price + 100)</li>
+</ul>
+
+@{
+   string status = "Not yet delivered.";
+
+   Model.Delivered = true;
+
+   if (Model.Delivered)
+   {
+      status = "Delivered!";
+   }
+
+   for (int i = 0; i < 10; i++)
+   {
+      status += i.ToString();
+   }
+}
+
+<!-- BLOCK OF CODE -->
+<h2>Order - Block of Code</h2>
+<ul>
+   <li>ID: @Model.Id</li>
+   <li>Name: @("Mr. " + Model.User.FirstName + " " + Model.User.LastName)</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price + Delivery: @(Model.Price + 100)</li>
+   <li>Status: @status</li>
+</ul>
+
+@if (Model.Delivered)
+{
+   <p>Is Delivered!</p>
+}
+
+
+<h2>PARTIAL VIEW</h2>
+@Html.Partial("~/Views/Shared/_OrderItem.cshtml", Model)
+
+
+@for (int i = 0; i < 10; i++)
+{
+   <ul>
+      <li>ID: @Model.Id</li>
+      <li>Name: @("Mr. " + Model.User.FirstName + " " + Model.User.LastName)</li>
+      <li>Pizza: @Model.Pizza</li>
+      <li>Price + Delivery: @(Model.Price + 100)</li>
+      <li>Status: @status</li>
+   </ul>
+}
+

@@ -1,0 +1,26 @@
+Employee domain model
+- EmployeeId
+- FirstName
+- LastName
+- Salary
+- Position (enum: junior, intermediate, senior, teamlead)
+
+EmployeeViewModel
+- EmployeeId
+- FirstName
+- LastName
+- Position
+
+EmployeeController
+AddEmployee view
+AddEmployee httpGet method
+AddEmployee httpPost method
+
+submit form for:
+FirstName
+LastName
+Position (dropdown)
+
+EmployeeInfo view
+Show the added employee here using the view model
+Try to add dummy data for salary and show it here as well, using the domain model

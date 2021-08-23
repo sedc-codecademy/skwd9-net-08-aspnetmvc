@@ -1,0 +1,40 @@
+﻿@model OrderViewModel
+@using SEDC.PizzaApp.Web.Models.Enums
+<div class="row">
+    <div class="col-md-5">
+        <form method="post" asp-controller="Order" asp-action="">
+            <input type="hidden" asp-for="@Model.Id" />
+            <div class="form-group">
+                <label asp-for="PizzaStore" class="control-label"> Pizza Store</label>
+                <input asp-for="PizzaStore" class="form-control" />
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(x => x.PizzaName, null, new { @class = "control-label" })
+                @Html.TextBoxFor(x => x.PizzaName,new { @class="form-control"})
+            </div>
+            <div class="form-group">
+                <label asp-for="Delivered" class="control-label">Delivery status:</label>
+                <input asp-for="Delivered" type="checkbox" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Price" class="control-label">Price</label>
+                <input asp-for="Price" class="form-control" disabled/>
+            </div>
+            <div class="form-group">
+                <label asp-for="PaymentMethod" class="control-label">Payment method</label>
+                <select class="form-control" asp-for="PaymentMethod" asp-items="Html.GetEnumSelectList<PaymentMethod>()">
+                    <option value="---">Please select payment method</option>
+                </select>
+                <!--Dropdown with HTML Helpers-->
+                @*@Html.DropDownListFor(x=>x.PaymentMethod,Html.GetEnumSelectList<PaymentMethod>(), new { @class="form-control"})*@
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label">User</label>
+                <!--Items for list are initialized here in the SelectList-->
+                @*<select asp-for="UserId" class="form-control" asp-items="@(new SelectList(ViewBag.Users,"Id","FullName"))"></select>*@
+                <!--List items are send from the controller-->
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.Users1"></select>
+            </div>
+        </form>
+    </div>
+</div>

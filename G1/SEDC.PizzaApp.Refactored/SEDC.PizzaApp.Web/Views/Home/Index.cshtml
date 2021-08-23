@@ -1,0 +1,31 @@
+﻿@model HomeViewModel
+
+@{
+    ViewBag.Title = "Welcome";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to the PizzaApp!</h1>
+    <p>The best application for ordering pizza in the town!</p>
+
+    <h3>Order your pizza NOW!</h3>
+    @*@using (Html.BeginForm())
+        {
+
+        }*@
+
+    <form asp-action="Index" asp-controller="Home" method="post">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="input-group">
+                    <span class="input-group-btn">
+                        <button class="btn btn-danger" type="submit">Order</button>
+                    </span>
+                    @*@Html.TextBoxFor(x => x.NumberOfPizzas, new { @class = "form-control"})*@
+
+                <input type="text" asp-for="NumberOfPizzas" class="form-control"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

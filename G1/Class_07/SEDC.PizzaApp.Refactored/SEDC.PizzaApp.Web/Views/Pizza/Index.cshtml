@@ -1,0 +1,14 @@
+﻿
+<!--This example is only for showing how dependency injection works in services(for views we use only view models for shoing data)-->
+@*@model List<SEDC.PizzaApp.Domain.Models.Pizza>
+
+<div class="row">
+    <div class="col-md-5">
+        @foreach (var item in Model)
+        {
+            <p>Name: @item.Name</p>
+            <p>Price: @item.Price</p>
+            <p>Pizza size:@item.PizzaSize</p>
+        }
+    </div>
+</div>*@

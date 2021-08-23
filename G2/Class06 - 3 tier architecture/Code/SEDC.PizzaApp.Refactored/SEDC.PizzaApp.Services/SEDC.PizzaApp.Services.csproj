@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.PizzaApp.DataAccess\SEDC.PizzaApp.DataAccess.csproj" />
+    <ProjectReference Include="..\SEDC.PizzaApp.Domain\SEDC.PizzaApp.Domain.csproj" />
+    <ProjectReference Include="..\SEDC.PizzaApp.Mappers\SEDC.PizzaApp.Mappers.csproj" />
+    <ProjectReference Include="..\SEDC.PizzaApp.ViewModels\SEDC.PizzaApp.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

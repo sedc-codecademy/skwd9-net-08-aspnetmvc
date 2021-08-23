@@ -1,0 +1,29 @@
+﻿@model OrderDetailsViewModel
+<div class="text-center">
+    <h2 class="display-4">Order Details</h2>
+</div>
+<br />
+<a asp-action="AddPizza" asp-route-id="@Model.Id" class="btn-dark">Add Pizza</a>
+<br />
+
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><label asp-for="UserFullName"></label>: @Model.UserFullName</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><label asp-for="Location"></label>: @Model.Location</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><label asp-for="PaymentMethod"></label>: @Model.PaymentMethod</h6>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    @foreach (var pizzaName in Model.PizzaNames)
+    {
+        <div class="card" style="width: 18rem; margin-left:15px;">
+            <img class="card-img-top" src="https://alternate-takes.com/wp-content/uploads/2021/05/s2.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h3 class="text-center">@pizzaName</h3>
+            </div>
+        </div>
+    }
+</div>
