@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.PizzaApp.DataAccess\SEDC.PizzaApp.DataAccess.csproj" />
+    <ProjectReference Include="..\SEDC.PizzaApp.Domain\SEDC.PizzaApp.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
