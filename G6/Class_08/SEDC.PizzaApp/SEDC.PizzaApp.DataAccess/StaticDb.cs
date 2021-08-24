@@ -117,5 +117,8 @@ namespace SEDC.PizzaApp.DataAccess
                 Username = "ljube.bajraktarov"
             }
         };
+
+        public static List<Order> Orders = new List<Order>();
+        public static List<PizzaOrder> PizzaOrders = new List<PizzaOrder>();
     }
 }
