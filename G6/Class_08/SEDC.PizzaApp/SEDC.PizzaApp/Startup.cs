@@ -25,6 +25,7 @@ namespace SEDC.PizzaApp
             services.AddControllersWithViews();
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IPizzaService, PizzaService>();
+            services.AddTransient<IPizzaOrderService, PizzaOrderService>();
             services.AddTransient<IRepository<User>, UserEntityRepository>();
             services.AddTransient<IRepository<Pizza>, PizzaEntityRepository>();
         }

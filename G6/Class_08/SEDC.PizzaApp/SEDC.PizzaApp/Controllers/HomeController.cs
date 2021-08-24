@@ -19,7 +19,13 @@ namespace SEDC.PizzaApp.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            return View(new HomeViewModel());
+        }
+
+        [HttpPost]
+        public IActionResult Index(HomeViewModel viewModel)
+        {
+            return RedirectToAction("Index", "Order", viewModel);
         }
 
         public IActionResult Privacy()
