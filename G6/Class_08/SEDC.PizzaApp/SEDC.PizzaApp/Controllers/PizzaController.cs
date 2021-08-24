@@ -17,7 +17,7 @@ namespace SEDC.PizzaApp.Controllers
 
         public IActionResult Index()
         {
-            List<Pizza> pizzas = _pizzaService.GetAllPizzas();
+            List<Pizza> pizzas = _pizzaService.GetPizzasForMenu();
             List<PizzaViewModel> viewModelPizzas = new List<PizzaViewModel>();
 
             foreach (Pizza item in pizzas)

@@ -8,5 +8,7 @@ namespace SEDC.PizzaApp.Services
         public List<Pizza> GetAllPizzas();
 
         public Pizza GetPizzaById(int id);
+
+        public List<Pizza> GetPizzasForMenu();
     }
 }
