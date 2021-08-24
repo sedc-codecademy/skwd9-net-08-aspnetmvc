@@ -7,6 +7,9 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SEDC.AspNet.Mvc.Class06.BusinessLayer.Helpers;
+using SEDC.AspNet.Mvc.Class06.BusinessLayer.Interfaces;
+using SEDC.AspNet.Mvc.Class06.BusinessLayer.Services;
 
 namespace SEDC.AspNet.Mvc.Class06.Application
 {
@@ -22,6 +25,11 @@ namespace SEDC.AspNet.Mvc.Class06.Application
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // registering services in Di container
+            services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IProductService, ProductService>();
+            DiRepositoryModule.RegisterRepositories(services);
+
             services.AddControllersWithViews();
         }
 

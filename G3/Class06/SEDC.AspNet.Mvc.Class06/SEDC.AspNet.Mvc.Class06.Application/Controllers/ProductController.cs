@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SEDC.AspNet.Mvc.Class06.BusinessLayer.Interfaces;
-using SEDC.AspNet.Mvc.Class06.BusinessLayer.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,20 +7,20 @@ using System.Threading.Tasks;
 
 namespace SEDC.AspNet.Mvc.Class06.Application.Controllers
 {
-    [Route("user")]
-    public class UserController : Controller
+    [Route("product")]
+    public class ProductController : Controller
     {
-        private readonly IUserService _userService;
+        private readonly IProductService _productService;
 
-        public UserController(IUserService userService)
+        public ProductController(IProductService productService)
         {
-            _userService = userService;
+            _productService = productService;
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult GetUser(int id)
+        public IActionResult GetProduct(int id)
         {
-            var response = _userService.GetUser(id);
+            var response = _productService.GetProduct(id);
             return Json(response);
         }
     }

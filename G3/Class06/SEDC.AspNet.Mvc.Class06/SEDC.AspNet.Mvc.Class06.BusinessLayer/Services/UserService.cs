@@ -18,6 +18,12 @@ namespace SEDC.AspNet.Mvc.Class06.BusinessLayer.Services
             _userRepository = userRepository;
         }
 
+        // without DI
+        //public UserService()
+        //{
+        //    _userRepository = new UserRepository();
+        //}
+
         public UserDto GetUser(int id)
         {
             var user = _userRepository.Get(id);
