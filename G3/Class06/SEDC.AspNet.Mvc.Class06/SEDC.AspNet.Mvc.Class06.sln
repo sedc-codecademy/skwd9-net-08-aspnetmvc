@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30517.126
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.Class06.DomainLayer", "SEDC.AspNet.Mvc.Class06.DomainLayer\SEDC.AspNet.Mvc.Class06.DomainLayer.csproj", "{F654E645-7F3C-408B-A214-156176502859}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.Class06.BusinessLayer", "SEDC.AspNet.Mvc.Class06.BusinessLayer\SEDC.AspNet.Mvc.Class06.BusinessLayer.csproj", "{A439BD21-6D91-452E-BF92-CA8894500DCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.Class06.DomainModels", "SEDC.AspNet.Mvc.Class06.DomainModels\SEDC.AspNet.Mvc.Class06.DomainModels.csproj", "{899E97D5-4B4C-4649-B9A8-D4FA16B8DCF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.Class06.Models", "SEDC.AspNet.Mvc.Class06.Models\SEDC.AspNet.Mvc.Class06.Models.csproj", "{60DC87A1-8CA7-44A9-A4FE-1FA76763F809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.Class06.Application", "SEDC.AspNet.Mvc.Class06.Application\SEDC.AspNet.Mvc.Class06.Application.csproj", "{0C83DA17-B999-489F-99B3-7B27E89DB0E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F654E645-7F3C-408B-A214-156176502859}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F654E645-7F3C-408B-A214-156176502859}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F654E645-7F3C-408B-A214-156176502859}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F654E645-7F3C-408B-A214-156176502859}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A439BD21-6D91-452E-BF92-CA8894500DCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A439BD21-6D91-452E-BF92-CA8894500DCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A439BD21-6D91-452E-BF92-CA8894500DCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A439BD21-6D91-452E-BF92-CA8894500DCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{899E97D5-4B4C-4649-B9A8-D4FA16B8DCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{899E97D5-4B4C-4649-B9A8-D4FA16B8DCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{899E97D5-4B4C-4649-B9A8-D4FA16B8DCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{899E97D5-4B4C-4649-B9A8-D4FA16B8DCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60DC87A1-8CA7-44A9-A4FE-1FA76763F809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DC87A1-8CA7-44A9-A4FE-1FA76763F809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DC87A1-8CA7-44A9-A4FE-1FA76763F809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DC87A1-8CA7-44A9-A4FE-1FA76763F809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C83DA17-B999-489F-99B3-7B27E89DB0E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C83DA17-B999-489F-99B3-7B27E89DB0E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C83DA17-B999-489F-99B3-7B27E89DB0E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C83DA17-B999-489F-99B3-7B27E89DB0E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14F4C2D8-C6BB-4F9D-A69A-1185FDCDD986}
+	EndGlobalSection
+EndGlobal

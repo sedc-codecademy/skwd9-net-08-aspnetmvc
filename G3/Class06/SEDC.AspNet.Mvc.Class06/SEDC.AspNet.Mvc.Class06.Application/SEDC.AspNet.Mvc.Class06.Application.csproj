@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.Class06.BusinessLayer\SEDC.AspNet.Mvc.Class06.BusinessLayer.csproj" />
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.Class06.Models\SEDC.AspNet.Mvc.Class06.Models.csproj" />
+  </ItemGroup>
+
+</Project>
