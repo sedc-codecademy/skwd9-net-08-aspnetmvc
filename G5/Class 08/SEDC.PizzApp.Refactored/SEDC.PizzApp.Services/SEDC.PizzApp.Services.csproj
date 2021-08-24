@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.PizzApp.DataAccess\SEDC.PizzApp.DataAccess.csproj" />
+    <ProjectReference Include="..\SEDC.PizzApp.Domain\SEDC.PizzApp.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
