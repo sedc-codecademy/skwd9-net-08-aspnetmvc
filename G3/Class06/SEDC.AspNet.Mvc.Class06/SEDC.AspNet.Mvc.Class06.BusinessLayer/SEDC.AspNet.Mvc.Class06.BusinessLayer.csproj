@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.Class06.DomainLayer\SEDC.AspNet.Mvc.Class06.DomainLayer.csproj" />
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.Class06.DomainModels\SEDC.AspNet.Mvc.Class06.DomainModels.csproj" />
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.Class06.Models\SEDC.AspNet.Mvc.Class06.Models.csproj" />
+  </ItemGroup>
+
+</Project>
