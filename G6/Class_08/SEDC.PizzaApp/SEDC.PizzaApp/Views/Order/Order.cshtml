@@ -1,0 +1,35 @@
+﻿@model OrderViewModel
+
+<h1>Order Pizza</h1>
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-8">
+            <div class="input-group">
+                <span class="input-group-append">@Html.LabelFor(x => x.Username)</span>
+                @Html.TextBox("Username", null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+    </div>
+    @for (int i = 0; i < Model.Pizzas.Count(); i++)
+    {
+        <h1>Pizza no: @(i + 1)</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input-group input-group-md">
+                    <span class="input-group-addon">@Html.Label(expression: $"model.Pizzas[{i}].Name")</span>
+                    @Html.TextBox($"Pizzas[{i}].Name", Model.Pizzas[i].Name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input-group input-group-md">
+                    <span class="input-group-addon">@Html.Label(expression: $"model.Pizzas[{i}].Size")</span>
+                    @Html.DropDownList($"Pizzas[{i}].Size", Html.GetEnumSelectList(Model.Pizzas[i].Size.GetType()), new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+    }
+    <button class="btn btn-danger" type="submit">Order</button>
+}
