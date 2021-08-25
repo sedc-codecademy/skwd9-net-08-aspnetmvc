@@ -1,0 +1,30 @@
+Create a new solution called FootballTeamManager.
+
+Create 2 domain models:
+- Player model containing the following properties:
+	- PlayerId
+	- FirstName
+	- LastName
+	- Position (enum with options Forward, Midfielder, Back, Goalkeeper)
+	- Salary
+- Team model containing the following properties:
+	- TeamId
+	- Name
+	- Players (list of Player)
+	- League (integer)
+
+Create 2 controllers:
+- PlayerController containing 2 methods:
+	- GetPlayerById returning a Player object with the provided ID
+	- AddPlayer that will be used to add a player using a submit form
+- TeamController containing 1 method:
+	- GetTeamById returning a Team object with the provided ID
+
+Create 3 views:
+- ShowPlayer view that is used by GetPlayerById method and uses HTML/tag helpers to show the player's properties
+(directly initialize a player object in the action)
+- AddPlayer that will be used by AddPlayer method that has a submit form for ALL properties (dropdown for position)
+- ShowTeam used by GetTeamById that shows the properties and lists all players below (hint: you can use a for loop)
+(directly initialize a team and a few players in the action)
+
+In the layout file, replace the current menu items with 3 links for all of the actions in the 2 controllers.
