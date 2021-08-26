@@ -25,7 +25,7 @@ namespace SEDC.PizzaApp.Controllers
         [HttpPost]
         public IActionResult Index(HomeViewModel viewModel)
         {
-            return RedirectToAction("Index", "Order", viewModel);
+            return RedirectToAction("Order", "Order", new { pizzas = viewModel.NumberOfPizzas });
         }
 
         public IActionResult Privacy()

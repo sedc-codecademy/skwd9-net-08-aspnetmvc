@@ -1,0 +1,43 @@
+﻿@model NewOrderViewModel
+<h3>New order (HTML helpers)</h3>
+
+@using (Html.BeginForm())
+{
+   @Html.LabelFor(x => x.FirstName)
+   @Html.TextBoxFor(x => x.FirstName)
+   <br />
+   @Html.LabelFor(x => x.LastName)
+   @Html.TextBoxFor(x => x.LastName)
+   <br />
+   @Html.LabelFor(x => x.PizzaName)
+   @Html.TextBoxFor(x => x.PizzaName)
+   <br />
+   @Html.LabelFor(x => x.PizzaSize)
+   @Html.DropDownListFor(x => x.PizzaSize,
+      Html.GetEnumSelectList(Model.PizzaSize.GetType()), "Select a size")
+   <br />
+   <button type="submit">Submit order</button>
+
+}
+
+<br />
+<br />
+<br />
+<br />
+
+<form asp-controller="Order" asp-action="NewOrder" method="post">
+   <label asp-for="FirstName"></label>
+   <input asp-for="FirstName" />
+   <br/>
+   <label asp-for="LastName"></label>
+   <input asp-for="LastName" />
+   <br/>
+   <label asp-for="PizzaName"></label>
+   <input asp-for="PizzaName" />
+   <br/>
+   <label asp-for="PizzaSize"></label>
+   <select asp-for="PizzaSize"
+           asp-items="Html.GetEnumSelectList(Model.PizzaSize.GetType())">
+      <option value="" disabled>Select a size</option>
+   </select>
+</form>

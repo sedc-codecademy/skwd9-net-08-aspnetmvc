@@ -1,0 +1,16 @@
+﻿@model Order
+
+@{
+   string status = (Model.Delivered) ? "Delivered" : "Not yet delivered.";
+}
+
+<h1>Order details</h1>
+<ul>
+   <li>ID: @Model.Id</li>
+   <li>Full name: @Model.User.GetFullName()</li>
+   <li>Pizza: @Model.Pizza</li>
+   <li>Price: @Model.Price</li>
+   <li>Delivered: @status</li>
+</ul>
+
+<meter id="price_gauge" value="@Model.Price" min="0" max="1000"/>

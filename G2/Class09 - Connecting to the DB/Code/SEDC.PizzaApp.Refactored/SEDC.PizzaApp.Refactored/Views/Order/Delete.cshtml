@@ -1,0 +1,30 @@
+﻿@model OrderDetailsViewModel
+
+<h3>Are you sure you want to delete the following order:</h3>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title"><label asp-for="UserFullName"></label>: @Model.UserFullName</h5>
+        <h6 class="card-subtitle mb-2 text-muted"><label asp-for="Location"></label>: @Model.Location</h6>
+        <h6 class="card-subtitle mb-2 text-muted"><label asp-for="PaymentMethod"></label>: @Model.PaymentMethod</h6>
+    </div>
+</div>
+<br />
+
+<div class="row">
+    @foreach (var pizzaName in Model.PizzaNames)
+    {
+        <div class="card" style="width: 18rem; margin-left:15px;">
+            <img class="card-img-top" src="https://alternate-takes.com/wp-content/uploads/2021/05/s2.jpg" alt="Card image cap">
+            <div class="card-body">
+                <h3 class="text-center">@pizzaName</h3>
+            </div>
+        </div>
+    }
+</div>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="submit" value="Delete" />
+</form>
+<a asp-action="Index">Back/Cancel</a>
