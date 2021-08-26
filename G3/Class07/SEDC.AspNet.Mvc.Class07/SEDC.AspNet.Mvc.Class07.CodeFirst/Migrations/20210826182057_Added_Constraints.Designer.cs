@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SEDC.AspNet.Mvc.Class07.CodeFirst;
 
 namespace SEDC.AspNet.Mvc.Class07.CodeFirst.Migrations
 {
     [DbContext(typeof(PizzaContext))]
-    partial class PizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20210826182057_Added_Constraints")]
+    partial class Added_Constraints
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,13 +35,6 @@ namespace SEDC.AspNet.Mvc.Class07.CodeFirst.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Addresses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Temnica"
-                        });
                 });
 
             modelBuilder.Entity("SEDC.AspNet.Mvc.Class07.CodeFirst.Models.DomainModels.NewsletterSubscription", b =>
@@ -55,13 +50,6 @@ namespace SEDC.AspNet.Mvc.Class07.CodeFirst.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Subscriptions");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            IsSubscribed = true
-                        });
                 });
 
             modelBuilder.Entity("SEDC.AspNet.Mvc.Class07.CodeFirst.Models.DomainModels.Order", b =>
@@ -108,29 +96,6 @@ namespace SEDC.AspNet.Mvc.Class07.CodeFirst.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Pizzas");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Kapri",
-                            Price = 7.0,
-                            Size = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Kapri",
-                            Price = 8.0,
-                            Size = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Kapri",
-                            Price = 9.0,
-                            Size = 3
-                        });
                 });
 
             modelBuilder.Entity("SEDC.AspNet.Mvc.Class07.CodeFirst.Models.DomainModels.User", b =>
@@ -167,17 +132,6 @@ namespace SEDC.AspNet.Mvc.Class07.CodeFirst.Migrations
                         .IsUnique();
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddressId = 1,
-                            FirstName = "Trajan",
-                            LastName = "Stevkovski",
-                            Phone = 123432123L,
-                            SubscriptionId = 1
-                        });
                 });
 
             modelBuilder.Entity("SEDC.AspNet.Mvc.Class07.CodeFirst.Models.DomainModels.Order", b =>
