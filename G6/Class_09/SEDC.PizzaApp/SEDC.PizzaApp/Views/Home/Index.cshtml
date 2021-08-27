@@ -1,0 +1,24 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Welcome to the pizza app</h1>
+    <hr />
+    <p>
+        <h3>Order your pizza now</h3>
+        @using (Html.BeginForm())
+        {
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <button class="btn btn-danger" type="submit">Order</button>
+                        @Html.TextBoxFor(x => x.NumberOfPizzas, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        }
+    </p>
+</div>

@@ -1,0 +1,9 @@
+﻿@model List<OrderViewModel>
+
+@foreach (OrderViewModel item in Model)
+{
+    <p>
+        @item.Username has ordered @item.Pizzas.Count() pizzas.
+        Pizzas: @string.Join(',', item.Pizzas.Select(x => x.Name + " " + x.Size.ToString()))
+    </p>
+}
