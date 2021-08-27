@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SEDC.AspNet.Mvc.PizzaApp.DataAccess;
+using SEDC.AspNet.Mvc.PizzaApp.DataAccess.Repositories;
+using SEDC.AspNet.Mvc.PizzaApp.Domain.Models;
 
 namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Helpers
 {
@@ -13,6 +15,11 @@ namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Helpers
             services.AddDbContext<PizzaContext>(
                     x => x.UseSqlServer(connectionString)
                 );
+
+            services.AddTransient<IRepository<User>, UserRepository>();
+            services.AddTransient<IRepository<Order>, OrderRepository>();
+            services.AddTransient<IRepository<Pizza>, PizzaRepository>();
+            services.AddTransient<IRepository<Feedback>, FeedbackRepository>();
 
             return services;
         }
