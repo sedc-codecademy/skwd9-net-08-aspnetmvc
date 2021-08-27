@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Helpers;
 
 namespace SEDC.AspNet.Mvc.PizzaApp.Apilication
 {
@@ -22,6 +23,8 @@ namespace SEDC.AspNet.Mvc.PizzaApp.Apilication
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            DomainModule.Register(services, Configuration);
+
             services.AddControllersWithViews();
         }
 
