@@ -1,13 +1,25 @@
-﻿using SEDC.PizzaApp.Domain.Enums;
+﻿using Microsoft.EntityFrameworkCore;
+using SEDC.PizzaApp.Domain.Enums;
 using SEDC.PizzaApp.Domain.Models;
-using System.Collections.Generic;
 
 namespace SEDC.PizzaApp.DataAccess
 {
-    public static class StaticDb
+    public class PizzaDbContext : DbContext
     {
-        public static List<Pizza> Pizzas = new List<Pizza>()
+        public PizzaDbContext(DbContextOptions options)
+            : base(options) { }
+
+        public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Pizza> Pizzas { get; set; }
+
+        public DbSet<User> Users { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder
+                .Entity<Pizza>()
+                .HasData(
                 new Pizza()
                 {
                     Id = 1,
@@ -104,10 +116,7 @@ namespace SEDC.PizzaApp.DataAccess
                     Size = PizzaSize.Family,
                     Image = "Siciliana.png"
                 }
-        };
-
-        public static List<User> Users = new List<User>();
-
-        public static List<Order> Orders = new List<Order>();
+                );
+        }
     }
 }
