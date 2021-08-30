@@ -1,0 +1,15 @@
+﻿@model OrderHomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-2">
+            <span class="input-group-btn">
+                <button class="btn btn-btn-danger" type="submit">Order</button>
+            </span>
+            @Html.TextBoxFor(x => x.NumberOfPizzas, new { @class = "form-control" })
+        </div>
+    </div>
+}
