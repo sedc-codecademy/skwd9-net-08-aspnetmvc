@@ -1,0 +1,18 @@
+﻿@model OrdersViewModel
+
+@{ ViewBag.Title = "Orders"; }
+
+<div class="jumbotron">
+   <h1>Orders</h1>
+   <h3>Fun Facts:</h3>
+   <p><b>First Customer: </b> @Model.NameOfFirstCustomer</p>
+   <p><b>Last Pizza Ordered: </b> @Model.LastPizza</p>
+   <p><b>Most popular Pizza: </b> @Model.MostPopularPizza</p>
+   <p><b>Number of orders so far: </b> @Model.OrderCount</p>
+</div>
+
+<h1>Orders</h1>
+@foreach (var order in Model.Orders)
+{
+   @Html.Partial("_OrderItem", order);
+}
