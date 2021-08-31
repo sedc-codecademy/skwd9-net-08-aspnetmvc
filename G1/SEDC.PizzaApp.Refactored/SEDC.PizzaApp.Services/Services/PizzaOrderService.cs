@@ -45,7 +45,20 @@ namespace SEDC.PizzaApp.Services.Services
         // TODO: Implement this method
         public string GetMostPopularPizza()
         {
-            throw new System.NotImplementedException();
+            List<Order> orders = _orderRepository.GetAll();
+
+            List<PizzaOrder> pizzas = orders
+                                      .SelectMany(x => x.PizzaOrders)
+                                      .ToList();
+
+            string mostPopularPizza = pizzas
+                .GroupBy(x => x.Pizza.Name)
+                .OrderByDescending(x => x.Count())
+                .FirstOrDefault()
+                .Select(x => x.Pizza.Name)
+                .FirstOrDefault();
+
+            return mostPopularPizza;
         }
 
         public Order GetOrderById(int id)

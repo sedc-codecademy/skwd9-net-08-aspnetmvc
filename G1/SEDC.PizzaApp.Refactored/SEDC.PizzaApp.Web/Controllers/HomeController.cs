@@ -25,6 +25,12 @@ namespace SEDC.PizzaApp.Web.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Index(HomeViewModel model)
+        {
+            return RedirectToAction("Order", "Order", new { pizzas = model.NumberOfPizzas });
+        }
+
         public IActionResult Menu()
         {
             List<Pizza> menu = _pizzaOrderService.GetMenu();
