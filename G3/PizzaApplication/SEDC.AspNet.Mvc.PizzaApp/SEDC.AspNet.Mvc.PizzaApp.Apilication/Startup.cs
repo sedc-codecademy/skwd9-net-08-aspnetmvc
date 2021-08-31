@@ -28,6 +28,7 @@ namespace SEDC.AspNet.Mvc.PizzaApp.Apilication
             DomainModule.Register(services, Configuration);
 
             services.AddTransient<IPizzaService, PizzaService>();
+            services.AddTransient<IPizzaOrderService, PizzaOrderService>();
 
             services.AddControllersWithViews();
         }

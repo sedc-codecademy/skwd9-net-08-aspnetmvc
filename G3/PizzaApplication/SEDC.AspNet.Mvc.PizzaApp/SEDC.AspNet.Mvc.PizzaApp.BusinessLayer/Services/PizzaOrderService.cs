@@ -9,11 +9,14 @@ namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Services
     public class PizzaOrderService : IPizzaOrderService
     {
         private readonly IRepository<Order> _orderRepository;
+        private readonly IRepository<User> _userRepository;
         private const string _currency = "C2";
 
-        public PizzaOrderService(IRepository<Order> orderRepository)
+        public PizzaOrderService(IRepository<Order> orderRepository,
+            IRepository<User> userRepository)
         {
             _orderRepository = orderRepository;
+            _userRepository = userRepository;
         }
 
         public OrderVM GetOrders()
@@ -34,10 +37,12 @@ namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Services
                 Currency = _currency,
                 Orders = mappedOrders,
                 LastPizza = GetLastPizzaName(),
-                //MostPopularPizza
+                MostPopularPizza = GetMostPopularPizza(),
+                NameOfFirstCustomer = _userRepository.GetAll().LastOrDefault()?.FirstName ?? string.Empty,
+                OrderCount = orders.Count
             };
 
-            return null;
+            return response;
         }
 
         private string GetLastPizzaName()
@@ -59,9 +64,16 @@ namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Services
             // return lastOrder?.PizzaOrders?.LastOrDefault()?.Pizza.Name ?? string.Empty;
         }
 
-        //private string GetMostPopularPizza()
-        //{
-
-        //}
+        private string GetMostPopularPizza()
+        {
+            return _orderRepository
+                .GetAll()
+                .SelectMany(x => x.PizzaOrders) // Flattening (All pizzas from all orders)
+                .GroupBy(x => x.Pizza.Name) // We group them by name (2 peperoni, 3 kapri ...)
+                .OrderByDescending(x => x.Count()) // Order by desc so we get the first pizza that is most ordered
+                .FirstOrDefault() // takes the first group (3 kapri pizzas) (Kapri, List<PizzaOrder>)
+                .Select(x => x.Pizza.Name) // selects only the names
+                .FirstOrDefault(); //gets the first name
+        }
     }
 }

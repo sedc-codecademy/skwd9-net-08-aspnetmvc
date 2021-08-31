@@ -13,7 +13,7 @@ namespace SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Helpers
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<PizzaContext>(
-                    x => x.UseSqlServer(connectionString)
+                    x => x.UseLazyLoadingProxies().UseSqlServer(connectionString)
                 );
 
             services.AddTransient<IRepository<User>, UserRepository>();
