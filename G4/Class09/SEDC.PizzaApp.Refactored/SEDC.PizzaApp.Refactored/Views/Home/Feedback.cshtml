@@ -1,0 +1,23 @@
+﻿@model FeedbackViewModel
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6">
+            <div class="input-group input-group-md">
+                <span class="input-group-addon">@Html.LabelFor(x => x.Name)</span>
+                @Html.TextBoxFor(x => x.Name, new { @class="form-control" })
+            </div>
+            <div class="input-group input-group-md">
+                <span class="input-group-addon">@Html.LabelFor(x => x.Email)</span>
+                @Html.TextBoxFor(x => x.Email, new { @class="form-control" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <span>@Html.LabelFor(x => x.Message)</span>
+            @Html.TextAreaFor(x => x.Message)
+        </div>
+    </div>
+    <button class="btn btn-danger" type="submit">Submit</button>
+}
