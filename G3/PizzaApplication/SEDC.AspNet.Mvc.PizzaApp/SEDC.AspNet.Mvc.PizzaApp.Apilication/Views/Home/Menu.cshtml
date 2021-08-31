@@ -1,0 +1,20 @@
+﻿@model MenuVM
+
+@{ ViewBag.Title = "Menu"; }
+
+<h1 class="display-4">Menu</h1>
+<div class="row">
+    <div class="col-md-12">
+        @{
+            foreach (var menuItem in Model.Pizzas)
+            {
+                @Html.Partial("~/Views/Shared/_PizzaItem.cshtml",
+                    new MenuPizzaVM
+                    {
+                        Pizza = menuItem,
+                        Currency = Model.Currency
+                    });
+            }
+        }
+    </div>
+</div>
