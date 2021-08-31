@@ -1,0 +1,18 @@
+﻿@model List<PizzaViewModel>
+
+<h1 class="text-center p-3 shadow-sm rounded">Pizza Menu</h1>
+
+@foreach (PizzaViewModel pizza in Model)
+{
+    <div class="row p-3 shadow-sm rounded">
+        <div class="col-md-2">&nbsp;</div>
+        <div class="col-md-4">
+            <img height="150px" src="~/images/@pizza.Image" alt="Pizza Image" />
+        </div>
+        <div class="col-md-4">
+            <h3>Pizza @pizza.Name</h3>
+            <h4>Price @pizza.Price$</h4>
+        </div>
+        <div class="col-md-2">&nbsp;</div>
+    </div>
+}
