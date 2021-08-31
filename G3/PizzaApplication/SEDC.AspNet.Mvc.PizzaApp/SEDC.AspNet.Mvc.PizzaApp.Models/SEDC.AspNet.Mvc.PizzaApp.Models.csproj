@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SEDC.AspNet.Mvc.PizzaApp.DataAccess\SEDC.AspNet.Mvc.PizzaApp.DataAccess.csproj" />
     <ProjectReference Include="..\SEDC.AspNet.Mvc.PizzaApp.Domain\SEDC.AspNet.Mvc.PizzaApp.Domain.csproj" />
-    <ProjectReference Include="..\SEDC.AspNet.Mvc.PizzaApp.Models\SEDC.AspNet.Mvc.PizzaApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

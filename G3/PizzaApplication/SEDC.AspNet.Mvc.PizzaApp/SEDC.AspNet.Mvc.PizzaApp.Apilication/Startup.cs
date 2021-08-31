@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Helpers;
+using SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Interfaces;
+using SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.Services;
 
 namespace SEDC.AspNet.Mvc.PizzaApp.Apilication
 {
@@ -24,6 +26,8 @@ namespace SEDC.AspNet.Mvc.PizzaApp.Apilication
         public void ConfigureServices(IServiceCollection services)
         {
             DomainModule.Register(services, Configuration);
+
+            services.AddTransient<IPizzaService, PizzaService>();
 
             services.AddControllersWithViews();
         }
