@@ -44,27 +44,27 @@ namespace SEDC.PizzaApp.DataAccess
         {
             new User
             {
-                Id=1,
-                FirstName="John",
-                LastName="Smith",
-                Address="Partizanska bb.",
-                Phone=111222333
+                Id = 1,
+                FirstName = "John",
+                LastName = "Smith",
+                Address = "Partizanska bb.",
+                Phone = 111222333
             },
             new User
             {
-                Id=2,
-                FirstName="John",
-                LastName="Doe",
-                Address="Partizanska br 19",
-                Phone=111122222
+                Id = 2,
+                FirstName = "John",
+                LastName = "Doe",
+                Address = "Partizanska br 19",
+                Phone = 111122222
             },
             new User
             {
                 Id = 3,
                 FirstName = "Alex",
-                LastName ="Smith",
+                LastName = "Smith",
                 Address = "Varshavska br.13",
-                Phone=123456789
+                Phone = 123456789
             }
         };
 
@@ -73,30 +73,30 @@ namespace SEDC.PizzaApp.DataAccess
         {
             new Order
             {
-                Id=1,
+                Id = 1,
                 PaymentMethod= PaymentMethod.Card,
-                User= Users.First(),
+                User = Users.First(),
                 //Price= Pizzas.First().Price,
-                Delivered=true,
+                Delivered = true,
                 PizzaStore = "Jakomo"
             },
             new Order
             {
-                Id=2,
-                PaymentMethod=PaymentMethod.Cash,
-                User=Users.FirstOrDefault(x=>x.Id==2),
+                Id = 2,
+                PaymentMethod = PaymentMethod.Cash,
+                User = Users.FirstOrDefault(x=>x.Id==2),
                 //Price=Pizzas.FirstOrDefault(x=>x.Id==2).Price,
-                Delivered=false,
+                Delivered = false,
                 PizzaStore = "Mama Italiana"
             },
             new Order
             {
-                Id= 3,
-                PaymentMethod= PaymentMethod.Card,
-                User=Users.Last(),
+                Id = 3,
+                PaymentMethod = PaymentMethod.Card,
+                User = Users.Last(),
                 //Price= Pizzas.Last().Price,
-                Delivered=false,
-                PizzaStore ="Domino's"
+                Delivered = false,
+                PizzaStore = "Domino's"
             }
         };
     }

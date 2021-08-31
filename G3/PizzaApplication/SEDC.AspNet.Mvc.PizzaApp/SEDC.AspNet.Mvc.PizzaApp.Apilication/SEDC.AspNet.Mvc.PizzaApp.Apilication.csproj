@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SEDC.AspNet.Mvc.PizzaApp.BusinessLayer\SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.csproj" />
+    <ProjectReference Include="..\SEDC.AspNet.Mvc.PizzaApp.Models\SEDC.AspNet.Mvc.PizzaApp.Models.csproj" />
   </ItemGroup>
 
 </Project>

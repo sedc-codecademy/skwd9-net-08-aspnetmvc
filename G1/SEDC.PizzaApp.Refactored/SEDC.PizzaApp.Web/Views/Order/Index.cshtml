@@ -1,0 +1,44 @@
+﻿@model OrdersViewModel
+
+
+@{
+    ViewData["Title"] = "Orders";
+}
+
+
+<div class="jumbotron">
+    <h3>Fun facts</h3>
+    <p><b>First customer:</b> @Model.NameOfFirstCustomer </p>
+    <p><b>Last pizza ordered:</b> @Model.LastOrderedPizza</p>
+    <p><b>Most popular pizza:</b> @Model.MostPopularPizza</p>
+    <p><b>Number of orders so far:</b> @Model.OrdersCount</p>
+</div>
+
+<h3>All orders in the system</h3>
+
+@foreach (var order in Model.Orders)
+{
+    <div class="row">
+        <div class="col-md-4">
+            <h3>User: @order.FirstName @order.LastName</h3>
+            <p><b>Price:</b> @order.Price $</p>
+        </div>
+        <div class="col-md-8">
+            <h3>Pizzas:</h3>
+            @foreach (var pizza in order.Pizzas)
+            {
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-4">
+                        <img src="~/images/@pizza.Image" alt="@pizza.Name" height="150" />
+                    </div>
+                    <div class="col-md-4">
+                        <h3>Pizza @pizza.Name</h3>
+                        <h4>@pizza.Price $</h4>
+                    </div>
+                </div>
+            }
+        <h5>+ 2$ delivery fee</h5>
+        </div>
+    </div>
+}
