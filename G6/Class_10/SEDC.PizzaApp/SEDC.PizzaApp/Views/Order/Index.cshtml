@@ -1,0 +1,11 @@
+﻿@model List<OrderViewModel>
+
+@foreach (OrderViewModel item in Model)
+{
+<p>
+    @item.Username has ordered @item.Pizzas.Count() pizzas that costed $@item.Pizzas.Select(x => x.Price).Sum().
+    Pizzas: @string.Join(',', item.Pizzas.Select(x => x.Name + " " + x.Size.ToString()))
+</p>
+}
+
+<p>$@ViewBag.TotalPriceOrders</p>

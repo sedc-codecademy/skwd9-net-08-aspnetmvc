@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.PizzaApp.DataAccess", "SEDC.AspNet.Mvc.PizzaApp.DataAccess\SEDC.AspNet.Mvc.PizzaApp.DataAccess.csproj", "{6791196F-69BD-45A0-98D3-32754D3AF0EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.AspNet.Mvc.PizzaApp.DataAccess", "SEDC.AspNet.Mvc.PizzaApp.DataAccess\SEDC.AspNet.Mvc.PizzaApp.DataAccess.csproj", "{6791196F-69BD-45A0-98D3-32754D3AF0EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.PizzaApp.Domain", "SEDC.AspNet.Mvc.PizzaApp.Domain\SEDC.AspNet.Mvc.PizzaApp.Domain.csproj", "{9FE73980-7CDB-44EB-A0A1-C5E7A8ADC9DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.AspNet.Mvc.PizzaApp.Domain", "SEDC.AspNet.Mvc.PizzaApp.Domain\SEDC.AspNet.Mvc.PizzaApp.Domain.csproj", "{9FE73980-7CDB-44EB-A0A1-C5E7A8ADC9DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.PizzaApp.BusinessLayer", "SEDC.AspNet.Mvc.PizzaApp.BusinessLayer\SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.csproj", "{179FAC35-1CC6-4CD4-B00B-014BD8679DE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.AspNet.Mvc.PizzaApp.BusinessLayer", "SEDC.AspNet.Mvc.PizzaApp.BusinessLayer\SEDC.AspNet.Mvc.PizzaApp.BusinessLayer.csproj", "{179FAC35-1CC6-4CD4-B00B-014BD8679DE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.PizzaApp.Apilication", "SEDC.AspNet.Mvc.PizzaApp.Apilication\SEDC.AspNet.Mvc.PizzaApp.Apilication.csproj", "{F3B595E5-F6B7-4D0C-847A-AE50DACF93E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SEDC.AspNet.Mvc.PizzaApp.Apilication", "SEDC.AspNet.Mvc.PizzaApp.Apilication\SEDC.AspNet.Mvc.PizzaApp.Apilication.csproj", "{F3B595E5-F6B7-4D0C-847A-AE50DACF93E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SEDC.AspNet.Mvc.PizzaApp.Models", "SEDC.AspNet.Mvc.PizzaApp.Models\SEDC.AspNet.Mvc.PizzaApp.Models.csproj", "{2083AB76-F8F2-4FEB-B82D-38D38FC16E45}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{F3B595E5-F6B7-4D0C-847A-AE50DACF93E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B595E5-F6B7-4D0C-847A-AE50DACF93E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3B595E5-F6B7-4D0C-847A-AE50DACF93E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2083AB76-F8F2-4FEB-B82D-38D38FC16E45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2083AB76-F8F2-4FEB-B82D-38D38FC16E45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2083AB76-F8F2-4FEB-B82D-38D38FC16E45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2083AB76-F8F2-4FEB-B82D-38D38FC16E45}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
