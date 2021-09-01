@@ -1,0 +1,16 @@
+﻿@model MenuViewModel
+
+@{
+   ViewBag.Title = "Menu";
+}
+
+<h1 align="center">Pizza Menu</h1>
+@foreach (var pizza in Model.Menu)
+{
+   @Html.Partial("_PizzaItem", new PizzaViewModel
+   {
+      PizzaName = pizza.PizzaName,
+      Price = pizza.Price,
+      Image = pizza.Image
+   })
+}
