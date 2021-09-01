@@ -1,7 +1,0 @@
-﻿@model SEDC.PizzApp.Models.OrderDetailsViewModel
-
-@{ ViewBag.Title = "Order no. " + Model.Order.Id; }
-
-<h1>Order No. @Model.Order.Id</h1>
-<h3>Delivery Info: @Model.Address (tel: @Model.Phone)</h3>
-@Html.PartialAsync("_OrderItem", Model.Order);
