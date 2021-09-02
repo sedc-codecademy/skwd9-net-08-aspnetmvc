@@ -16,5 +16,11 @@ namespace SEDC.AspNet.Mvc.PizzaApp.Apilication.Controllers
         {
             return View(_pizzaOrderService.GetOrders());
         }
+
+        [HttpGet("OrderPizza")]
+        public IActionResult Order()
+        {
+            return View();
+        }
     }
 }
