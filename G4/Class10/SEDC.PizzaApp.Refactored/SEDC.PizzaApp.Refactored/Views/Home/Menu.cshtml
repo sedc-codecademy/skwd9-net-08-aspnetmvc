@@ -1,0 +1,8 @@
+﻿@model MenuViewModel
+@{ ViewBag.Title = "Menu"; }
+
+<h1>Pizza Menu</h1>
+@for(int i = 0; i < Model.Menu.Count; i++)
+{
+    @Html.Partial("_PizzaItem", Model.Menu[i]);
+}

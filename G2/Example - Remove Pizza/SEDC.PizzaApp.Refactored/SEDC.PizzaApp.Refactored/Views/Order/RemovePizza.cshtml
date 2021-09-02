@@ -1,0 +1,16 @@
+﻿@model RemovePizzaModel
+
+<h2>Remove Pizza</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="RemovePizza" method="post">
+            <input type="hidden" asp-for="OrderId" />
+            <div class="form-group">
+                <label asp-for="PizzaId" class="control-label"></label>
+                <select class="form-control" asp-for="PizzaId" asp-items="@(new SelectList(ViewBag.Pizzas, "Id", "Name"))"></select>
+            </div>
+            <input type="submit" value="Remove" />
+        </form>
+    </div>
+</div>

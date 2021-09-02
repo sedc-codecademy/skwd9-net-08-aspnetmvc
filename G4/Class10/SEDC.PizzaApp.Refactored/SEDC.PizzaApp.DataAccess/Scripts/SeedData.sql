@@ -1,0 +1,7 @@
+﻿INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin2','Jankuloski2', 'Address2', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin3','Jankuloski3', 'Address2', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin4','Jankuloski4', 'Address4', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin5','Jankuloski5', 'Address5', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin6','Jankuloski6', 'Address6', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin7','Jankuloski7', 'Address7', '123456')
+INSERT INTO dbo.Users (FirstName, LastName, Address, Phone) VALUES('Martin8','Jankuloski8', 'Address8', '123456')
