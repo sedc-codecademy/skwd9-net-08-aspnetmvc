@@ -1,0 +1,93 @@
+﻿@model CreateOrderVM
+@*@{
+        var listOfPizzas = new List<PizzaVM>();
+        if(Model.Pizzas != null)
+        {
+            listOfPizzas = Model.Pizzas;
+        }
+    }*@
+
+@{ 
+    if(TempData["Error"] != null)
+    {
+        <h3 class="alert alert-danger" role="alert">@TempData["Error"]</h3>
+    }
+}
+
+<div class="row">
+    <h1 class="display-4">Order pizza</h1>
+</div>
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6 mr-4">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.FirstName)
+                @Html.TextBoxFor(x => x.FirstName, null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.LastName)
+                @Html.TextBoxFor(x => x.LastName, null, new { @class = "form-control", placeholder = "Please enter lastname" })
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mr-4">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.Address)
+                @Html.TextBoxFor(x => x.Address, null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.Phone)
+                @Html.TextBoxFor(x => x.Phone, null, new { @class = "form-control", type = "number" })
+            </div>
+        </div>
+    </div>
+
+    @*@for(int i = 0; i < Model.Pizzas.Count; i++)
+        {
+            <h1>Pizza no: @(i + 1) </h1>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        @Html.LabelFor(x => x.Pizzas[i].Name)
+                        @Html.TextBoxFor(x => x.Pizzas[i].Name, null, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="input-group input-group-lg">
+                        @Html.LabelFor(x => x.Pizzas[i].Size)
+                        @Html.DropDownListFor(
+                                    x => x.Pizzas[i].Size,
+                                    Html.GetEnumSelectList(Model.Pizzas[i].Size.GetType()),
+                                    new { @class = "form-control", Model.Pizzas[i].Size})
+                    </div>
+                </div>
+            </div>
+        }*@
+
+    <div class="row">
+        <div class="col-md-6 mr-4">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.PizzaName)
+                @Html.TextBoxFor(x => x.PizzaName, null, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="input-group input-group-lg">
+                @Html.LabelFor(x => x.Size)
+                @Html.DropDownListFor(
+                                    x => x.Size,
+                                    Html.GetEnumSelectList<SEDC.AspNet.Mvc.PizzaApp.Domain.Enums.PizzaSize>(), // this is not ok
+                                    new { @class = "form-control" })
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-outline-danger" type="submit">Order</button>
+}

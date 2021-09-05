@@ -1,0 +1,22 @@
+﻿@model OrderVM
+
+@{ 
+    TempData["Currency"] = Model.Currency;
+}
+
+<div class="jumbotron">
+    <h1 class="display-4">Orders</h1>
+    <h3 class="display-4">Fun Facts:</h3>
+    <p class="lead">First cusstomer: @Model.NameOfFirstCustomer</p>
+    <hr class="my-4">
+    <p class="lead">Last Pizza Ordered: @Model.LastPizza</p>
+    <hr class="my-4">
+    <p class="lead">Most popular pizza: @Model.MostPopularPizza</p>
+    <hr class="my-4">
+    <p class="lead">Number of orders so far: @Model.OrderCount</p>
+</div>
+
+@foreach (var order in Model.Orders)
+{
+    @Html.Partial("_OrderItem", order)
+}

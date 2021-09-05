@@ -1,0 +1,27 @@
+﻿@model OrderItemVM
+
+@{ 
+    var deliveryFee = 2;
+    var currency = "";
+    if(TempData["Currency"] != null)
+    {
+        currency = TempData["Currency"].ToString();
+    }
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>User: @Model.FirstName @Model.LastName</h3>
+        <p>Price: @Model.Price.ToString(currency) (price includes delivery fee @deliveryFee.ToString(currency))</p>
+    </div>
+    <div class="col-md-8">
+        @foreach (var pizza in Model.Pizzas)
+        {
+            @Html.Partial("_PizzaItem", new MenuPizzaVM
+                   {
+                        Currency = currency,
+                        Pizza = pizza
+                   })
+        }
+    </div>
+</div>

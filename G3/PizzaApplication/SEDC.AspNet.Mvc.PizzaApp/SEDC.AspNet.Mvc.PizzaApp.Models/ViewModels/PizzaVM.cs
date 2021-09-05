@@ -16,7 +16,7 @@ namespace SEDC.AspNet.Mvc.PizzaApp.Models.ViewModels
             return new PizzaVM
             {
                 Id = pizza.Id,
-                ImageUrl = $"~/images/{pizza.Image}",
+                ImageUrl = $"/images/{pizza.Image}",
                 Name = pizza.Name,
                 Price = pizza.Price,
                 Size = pizza.Size

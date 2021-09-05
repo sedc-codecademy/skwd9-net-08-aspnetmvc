@@ -1,0 +1,1 @@
+﻿console.log("Using doSomething.js file");
