@@ -1,4 +1,5 @@
-﻿using SEDC.PizzaApp.Domain.Models;
+﻿using SEDC.PizzaApp.Domain.Enums;
+using SEDC.PizzaApp.Domain.Models;
 using System.Collections.Generic;
 
 namespace SEDC.PizzaApp.Services.Services.Interface
@@ -12,5 +13,6 @@ namespace SEDC.PizzaApp.Services.Services.Interface
         string GetMostPopularPizza();
         Order GetLastOrder();
         void MakeNewOrder(Order order);
+        Pizza GetPizzaFromMenu(string pizzaName, PizzaSize pizzaSize);
     }
 }

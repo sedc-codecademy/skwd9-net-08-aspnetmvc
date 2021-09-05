@@ -1,5 +1,6 @@
 ﻿using SEDC.PizzaApp.DataAccess.Repositories;
 using SEDC.PizzaApp.DataAccess.Repositories.CacheRepository;
+using SEDC.PizzaApp.Domain.Enums;
 using SEDC.PizzaApp.Domain.Models;
 using SEDC.PizzaApp.Services.Services.Interface;
 using System.Collections.Generic;
@@ -13,11 +14,11 @@ namespace SEDC.PizzaApp.Services.Services
         private IRepository<Order> _orderRepository;
 
         #region Tightly coupled dependency
-            //registering implementation for interface in constructor(without container)
-            //public PizzaService()
-            //{
-            //    _pizzaRepository = new PizzaRepository();
-            //}
+        //registering implementation for interface in constructor(without container)
+        //public PizzaService()
+        //{
+        //    _pizzaRepository = new PizzaRepository();
+        //}
         #endregion
 
         public PizzaOrderService(IRepository<Pizza> pizzaRepository, IRepository<Order> orderRepository)
@@ -74,6 +75,12 @@ namespace SEDC.PizzaApp.Services.Services
         public void MakeNewOrder(Order order)
         {
             _orderRepository.Insert(order);
+        }
+
+        public Pizza GetPizzaFromMenu(string pizzaName, PizzaSize pizzaSize)
+        {
+            //List<Pizza> pizzas = _pizzaRepository.GetAll();
+            return _pizzaRepository.GetAll().FirstOrDefault(x => x.Name == pizzaName && x.PizzaSize == pizzaSize);
         }
     }
 }

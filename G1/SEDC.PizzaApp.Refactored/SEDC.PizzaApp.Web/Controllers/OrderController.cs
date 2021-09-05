@@ -75,7 +75,7 @@ namespace SEDC.PizzaApp.Web.Controllers
 
             viewModel.Pizzas = new List<PizzaViewModel>();
 
-            for(int i = 0; i < pizzas; i++)
+            for (int i = 0; i < pizzas; i++)
             {
                 viewModel.Pizzas.Add(new PizzaViewModel());
             }
@@ -84,9 +84,46 @@ namespace SEDC.PizzaApp.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult Order(OrdersViewModel model)
+        public IActionResult Order(OrderViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                Order order = new Order();
+                List<PizzaOrder> pizzas = new List<PizzaOrder>();
+
+                foreach (PizzaViewModel pizza in model.Pizzas)
+                {
+
+                    var pizzaModel = _pizzaService.GetPizzaFromMenu(pizza.Name, pizza.PizzaSize);
+                    PizzaOrder pizzaOrder = new PizzaOrder
+                    {
+                        //adding object to property when trying to create new object
+                        //Pizza = _pizzaService.GetPizzaFromMenu(pizza.Name, pizza.PizzaSize),
+                        Order = order
+                    };
+                    pizzaOrder.PizzaId = pizzaModel.Id;
+                    pizzas.Add(pizzaOrder);
+                }
+                order.PizzaOrders = pizzas;
+
+                User user = new User
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName,
+                    Address = model.Address,
+                    Phone = model.Phone
+                };
+                order.User = user;
+
+                _pizzaService.MakeNewOrder(order);
+
+                return RedirectToAction("Index", "Order");
+            }
+            else
+            {
+                return View("Order", model);
+            }
+
         }
     }
 }
